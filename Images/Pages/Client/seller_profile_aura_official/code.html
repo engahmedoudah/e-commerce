@@ -1,0 +1,305 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Aura Official Store - Seller Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "tertiary-fixed": "#d3e4fe",
+                "on-tertiary-fixed-variant": "#38485d",
+                "outline-variant": "#c6c6cc",
+                "surface-container-lowest": "#ffffff",
+                "outline": "#76777d",
+                "on-surface": "#191c1e",
+                "on-primary-fixed": "#151b29",
+                "inverse-primary": "#c1c6d9",
+                "primary-fixed-dim": "#c1c6d9",
+                "on-primary-fixed-variant": "#414756",
+                "on-secondary-fixed": "#26190a",
+                "on-secondary-fixed-variant": "#544432",
+                "on-secondary-container": "#73614d",
+                "on-primary": "#ffffff",
+                "secondary-container": "#f7dec5",
+                "primary-container": "#151b29",
+                "on-secondary": "#ffffff",
+                "on-error-container": "#93000a",
+                "primary-fixed": "#dde2f6",
+                "primary": "#000000",
+                "on-tertiary-container": "#75859d",
+                "on-background": "#191c1e",
+                "error-container": "#ffdad6",
+                "secondary-fixed": "#f7dec5",
+                "background": "#f7f9fb",
+                "on-tertiary": "#ffffff",
+                "surface-container": "#eceef0",
+                "tertiary": "#000000",
+                "on-tertiary-fixed": "#0b1c30",
+                "inverse-on-surface": "#eff1f3",
+                "secondary": "#6d5b48",
+                "on-surface-variant": "#45464c",
+                "surface-container-high": "#e6e8ea",
+                "surface-container-low": "#f2f4f6",
+                "surface-tint": "#585e6f",
+                "surface-bright": "#f7f9fb",
+                "secondary-fixed-dim": "#dac3aa",
+                "tertiary-fixed-dim": "#b7c8e1",
+                "tertiary-container": "#0b1c30",
+                "inverse-surface": "#2d3133",
+                "on-primary-container": "#7e8395",
+                "error": "#ba1a1a",
+                "surface": "#f7f9fb",
+                "surface-container-highest": "#e0e3e5",
+                "surface-dim": "#d8dadc",
+                "on-error": "#ffffff",
+                "surface-variant": "#e0e3e5"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "sm": "12px",
+                "lg": "24px",
+                "container-margin": "20px",
+                "gutter": "12px",
+                "xs": "4px",
+                "xl": "32px",
+                "md": "16px",
+                "base": "8px"
+        },
+        "fontFamily": {
+                "headline-lg-mobile": ["Inter"],
+                "title-lg": ["Inter"],
+                "body-md": ["Inter"],
+                "body-lg": ["Inter"],
+                "price-display": ["Inter"],
+                "label-md": ["Inter"],
+                "display-lg": ["Inter"],
+                "headline-lg": ["Inter"]
+        },
+        "fontSize": {
+                "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "600"}],
+                "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "price-display": ["24px", {"lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body {
+    background-color: #f7f9fb; /* surface */
+    -webkit-tap-highlight-color: transparent;
+  }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .material-symbols-outlined.fill {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen pb-xl">
+<!-- TopAppBar -->
+<header class="bg-surface/90 dark:bg-surface/90 backdrop-blur-md fixed top-0 w-full z-50 flex justify-between items-center px-container-margin py-sm w-full">
+<button class="w-10 h-10 flex items-center justify-start text-on-surface-variant dark:text-outline hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-title-lg">menu</span>
+</button>
+<h1 class="font-display-lg text-display-lg tracking-tighter text-primary dark:text-primary-fixed">AURA</h1>
+<button class="w-10 h-10 flex items-center justify-end text-on-surface-variant dark:text-outline hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-title-lg">shopping_bag</span>
+</button>
+</header>
+<!-- Main Canvas -->
+<main class="pt-[72px]"> <!-- Spacer for fixed header -->
+<!-- Cover & Avatar Section -->
+<div class="relative w-full h-48 bg-surface-container-low" data-alt="A striking, minimalist architectural interior of a high-end luxury boutique. The space features smooth concrete walls, brushed steel clothing racks, and ambient soft white lighting that creates a modern, serene light-mode aesthetic. A subtle hint of warm sunlight enters from a skylight, highlighting the pristine, uncluttered premium retail environment. The mood is sophisticated, expansive, and perfectly aligned with an elite e-commerce brand identity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwgSZRs5i1lkY1id33hByv7baaIsIKsDFGcbdMcKpBnKykGdGyXMWGOjaxEFTJ86BR3_EAkWPKty6OinldGQkwj7utJcLRt9ePpxWLqfJy27mlcJFh6BTyyTosOI5cD4Ewy-PWVyQlN4Eqn-FTHewFIzD4zs-x9kO0YI2PBtfbT114VDpiNaUZckk-PuSGTgoZvLuPOCFGG9PRqbNAdsvIR90XebIR0lq6LkflP-Adk7WGH-9ct3Vfag')">
+<!-- Gradient overlay for subtle blending -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60"></div>
+</div>
+<!-- Profile Info -->
+<div class="relative px-container-margin -mt-12 flex items-end gap-sm mb-lg">
+<div class="w-24 h-24 rounded-full border-4 border-surface bg-surface-container-lowest overflow-hidden flex-shrink-0 z-10 shadow-sm">
+<img alt="Store Avatar" class="w-full h-full object-cover" data-alt="A minimalist, abstract geometric brand logo consisting of intersecting monochromatic circles on a pure white background. The design is sleek, modern, and perfectly balanced, utilizing deep charcoal blacks and subtle metallic silver accents. The lighting is flat and even, emphasizing optical precision and high-end modernism. The overall mood is quiet luxury, representing a dependable and premium official store identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgxwMz9pXa4xWT3VIhyYNgCnWnf6XA4f3xaqmAS9lfwKzcAtas3Q11dPU9L4L9GVOvSpy9RYyGEv4hZDG-_glxzm17fOkvixVN1WZqMw2XZ6biwXPmaixCGEPU_4yhnRnfwTpk5iwYVRd85q5OszLy1RdtvdaooXeTS5u45r1_if1UGeqVuAt307CEDhdLewPWELOuP0I3UFrumA1DiOqIRqH7Q7XxoG_KOkYxL9G49ArHilDr2wLDHQ">
+</div>
+<div class="mb-xs flex-1">
+<div class="flex items-center gap-xs">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">Aura Official Store</h2>
+<span class="material-symbols-outlined fill text-tertiary-fixed-dim text-title-lg" title="Verified Seller">verified</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Curated minimal essentials. Elevate your everyday.</p>
+</div>
+</div>
+<!-- Quick Stats Bento Grid -->
+<div class="px-container-margin grid grid-cols-2 md:grid-cols-4 gap-gutter mb-lg">
+<!-- Rating -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-md flex flex-col justify-center items-start shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
+<div class="flex items-center gap-xs text-primary mb-xs">
+<span class="material-symbols-outlined fill text-title-lg text-primary">star</span>
+<span class="font-title-lg text-title-lg">4.9</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase">Seller Rating</span>
+</div>
+<!-- Response Rate -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-md flex flex-col justify-center items-start shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
+<div class="flex items-center gap-xs text-primary mb-xs">
+<span class="material-symbols-outlined text-title-lg text-primary">forum</span>
+<span class="font-title-lg text-title-lg">98%</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase">Response Rate</span>
+</div>
+<!-- Followers -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-md flex flex-col justify-center items-start shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
+<div class="flex items-center gap-xs text-primary mb-xs">
+<span class="material-symbols-outlined text-title-lg text-primary">group</span>
+<span class="font-title-lg text-title-lg">1.2M</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase">Followers</span>
+</div>
+<!-- Transparency -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-md flex flex-col justify-center items-start shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
+<div class="flex items-center gap-xs text-primary mb-xs">
+<span class="material-symbols-outlined text-title-lg text-primary">verified_user</span>
+<span class="font-title-lg text-title-lg">3 Yrs</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase">Aura Trusted</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="px-container-margin flex gap-gutter mb-xl">
+<button class="flex-1 bg-primary text-on-primary font-label-md text-label-md h-12 rounded-lg flex items-center justify-center gap-xs active:scale-[0.98] transition-transform shadow-md">
+<span class="material-symbols-outlined text-[18px]">add</span>
+        FOLLOW
+      </button>
+<button class="flex-1 border border-outline text-on-surface font-label-md text-label-md h-12 rounded-lg flex items-center justify-center gap-xs active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined text-[18px]">chat_bubble_outline</span>
+        MESSAGE
+      </button>
+</div>
+<!-- Navigation Tabs -->
+<div class="px-container-margin border-b border-surface-variant flex gap-lg overflow-x-auto no-scrollbar mb-lg">
+<button class="pb-sm border-b-2 border-primary text-primary font-label-md text-label-md uppercase whitespace-nowrap">Top Sellers</button>
+<button class="pb-sm border-b-2 border-transparent text-on-surface-variant font-label-md text-label-md uppercase whitespace-nowrap hover:text-on-surface transition-colors">New Arrivals</button>
+<button class="pb-sm border-b-2 border-transparent text-on-surface-variant font-label-md text-label-md uppercase whitespace-nowrap hover:text-on-surface transition-colors">Collections</button>
+<button class="pb-sm border-b-2 border-transparent text-on-surface-variant font-label-md text-label-md uppercase whitespace-nowrap hover:text-on-surface transition-colors">About</button>
+</div>
+<!-- Top Selling Products Grid -->
+<div class="px-container-margin grid grid-cols-2 gap-gutter mb-xl">
+<!-- Product 1 -->
+<a class="flex flex-col gap-xs group active:opacity-80 transition-opacity" href="#">
+<div class="relative w-full aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden mb-xs">
+<img alt="Product Image" class="w-full h-full object-cover" data-alt="A luxurious, minimalist ceramic vase featuring a matte charcoal finish. The object is perfectly centered on a pure white background, illuminated by soft, diffused high-key lighting that emphasizes its smooth, tactile surface and elegant, sweeping curves. The composition relies on expansive darkspace and micro-contrast to evoke a sense of quiet luxury, aligning with a high-end modern e-commerce aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8tsF_qZXurZW3GcgVnFEv91cv9f3IoicVKOkvz2qFmEXnJO4WyAJRlgE1rONy4BElVrbF3hQWufSuspiMcpiWDOb5VTXVPIR1qA6g3R1i2UQriGi9P2qiIy3ailQXf5uyf2ALlnXcTpJHmwXs9pbY6OK0FsebkVN5CoKB2b6rvKtqChUubkmaDr3orj_D-N36vZ9HOKXooqaWk8hRiNfkU7YJqoRgYrDOMDDcbr9FL-SK0jVqHdKOMA">
+<button class="absolute top-sm right-sm w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[18px]">favorite_border</span>
+</button>
+<!-- Badge -->
+<div class="absolute bottom-sm left-sm bg-primary text-on-primary font-label-md text-[10px] px-2 py-1 rounded-sm">BESTSELLER</div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-[10px] text-on-surface-variant uppercase tracking-wider mb-xs">AURA HOME</span>
+<h3 class="font-body-md text-body-md text-on-surface line-clamp-1 leading-tight">Monolith Ceramic Vase</h3>
+<span class="font-price-display text-[18px] text-primary mt-xs">$145.00</span>
+</div>
+</a>
+<!-- Product 2 -->
+<a class="flex flex-col gap-xs group active:opacity-80 transition-opacity" href="#">
+<div class="relative w-full aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden mb-xs">
+<img alt="Product Image" class="w-full h-full object-cover" data-alt="A sleek, modern desk lamp crafted from brushed aluminum and matte black steel. The lamp stands tall against a pristine, bright studio backdrop, casting a soft, controlled pool of warm light. The lighting setup highlights the precision engineering and high-end materials. The visual style is highly structured, editorial, and minimalist, embodying the quiet luxury of premium home goods." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxSLXXkmxF2JbS4giXd3w0zOrjFJ2i9LAevVCAeg72zV8E3KnP1OIvPFi1ezuSAVSgd66R6rmUef7I14I-KtY5-BE2SGv979y010s8OMQ5udmKauwEPYyLtqgEvF5x7HwSKpVGGjAEBxC1IHGStu8cnrEM0-fzP4xKLbp_h8QlARtH0tq3knJED0zBCAAGUng4_ERM7j3UzfgU1_fxJSFNJ-pp7dVMaRD9wDtFhVdncrv68_AlnptdnA">
+<button class="absolute top-sm right-sm w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[18px]">favorite_border</span>
+</button>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-[10px] text-on-surface-variant uppercase tracking-wider mb-xs">AURA TECH</span>
+<h3 class="font-body-md text-body-md text-on-surface line-clamp-1 leading-tight">Lumina Desk Task Lamp</h3>
+<span class="font-price-display text-[18px] text-primary mt-xs">$280.00</span>
+</div>
+</a>
+<!-- Product 3 -->
+<a class="flex flex-col gap-xs group active:opacity-80 transition-opacity" href="#">
+<div class="relative w-full aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden mb-xs">
+<img alt="Product Image" class="w-full h-full object-cover" data-alt="A premium, structured leather tote bag in a deep obsidian black hue, displayed on a minimalist concrete plinth. The background is an expansive, soft white void, creating high micro-contrast. Studio lighting catches the subtle grain of the leather and the polished silver hardware, conveying a sense of tactile softness and architectural stability typical of high-end fashion e-commerce photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXXepPie2Pwf9AKSfTdWlgOP7xGeW5i8b0sCqh-1enhzHcyrYQUIHl7gyvRrCQ_JzDrHqsmFTXw1yEFvfv0G6Mu-9zLgmOYkZaY9eB2_KzOxKKdgsiYhsBaK1U8NUxtdKNzs_7Sl7DQtyq3r7_dnH7Od9F3HoO-Opxb4wwR9qmaxLZSTJjjs_CUPpB5Z_R1xn07-N6GBJMc_KXwBomlWVR2DIN-heAMnin5rRSQOeUbP-WHNHSakVicA">
+<button class="absolute top-sm right-sm w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[18px]">favorite_border</span>
+</button>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-[10px] text-on-surface-variant uppercase tracking-wider mb-xs">AURA STUDIO</span>
+<h3 class="font-body-md text-body-md text-on-surface line-clamp-1 leading-tight">Obsidian Leather Tote</h3>
+<span class="font-price-display text-[18px] text-primary mt-xs">$450.00</span>
+</div>
+</a>
+<!-- Product 4 -->
+<a class="flex flex-col gap-xs group active:opacity-80 transition-opacity" href="#">
+<div class="relative w-full aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden mb-xs">
+<img alt="Product Image" class="w-full h-full object-cover" data-alt="A minimalist set of matte white porcelain espresso cups neatly arranged on an elegant slate tray. The overhead lighting casts soft, ambient shadows, hinting at depth and premium craftsmanship. The stark white background creates a breathable, uncluttered canvas that emphasizes the organic curves and quiet luxury of the product, fitting perfectly into a modern, high-end lifestyle aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZEEy9aKrPrUWoon3RxgaGp5iBIIcyQxbtU9INI7P5YZfPZxYacy1jD3QTdPEnOWwv-aPg11OsgH6y3-8fP4wCB7hm-40P724MpNIlCNwkQ2rnM_sPBUzvIHLgs92ER6-NGGU5kw1CoG28mkFCjAfONhEyEQSmakJBDXdu6dfmlrKjMtHCJgBElgFjQBQnpnylnmJMnxrfkUYTJ_A6GwgxNTYXSM-Hy-6JqhFGl8liGDNe52zuD2vj9Q">
+<button class="absolute top-sm right-sm w-8 h-8 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center justify-center text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[18px]">favorite_border</span>
+</button>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-[10px] text-on-surface-variant uppercase tracking-wider mb-xs">AURA HOME</span>
+<h3 class="font-body-md text-body-md text-on-surface line-clamp-1 leading-tight">Porcelain Espresso Set</h3>
+<span class="font-price-display text-[18px] text-primary mt-xs">$85.00</span>
+</div>
+</a>
+</div>
+<!-- Business Transparency / Store Info -->
+<div class="mx-container-margin bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-lg flex flex-col gap-md shadow-[0px_4px_20px_rgba(0,0,0,0.02)] mb-xl">
+<h3 class="font-title-lg text-title-lg text-primary">Business Transparency</h3>
+<div class="flex items-start gap-md border-b border-surface-variant pb-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md uppercase text-on-surface-variant mb-xs">Verified Location</h4>
+<p class="font-body-md text-body-md text-on-surface">1200 Aura Blvd, Suite 400<br>Los Angeles, CA 90015, USA</p>
+</div>
+</div>
+<div class="flex items-start gap-md border-b border-surface-variant pb-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md uppercase text-on-surface-variant mb-xs">Shipping Performance</h4>
+<p class="font-body-md text-body-md text-on-surface">Usually ships within <strong>24 hours</strong>. Global premium logistics partner network.</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined">assignment_return</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md uppercase text-on-surface-variant mb-xs">Return Policy</h4>
+<p class="font-body-md text-body-md text-on-surface">30-day effortless returns. Items must be in pristine original condition.</p>
+</div>
+</div>
+</div>
+</main>
+</body></html>

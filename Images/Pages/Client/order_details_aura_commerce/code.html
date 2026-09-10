@@ -1,0 +1,369 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#d3e4fe",
+                    "surface-bright": "#f7f9fb",
+                    "primary-fixed": "#dde2f6",
+                    "on-secondary-fixed": "#26190a",
+                    "on-tertiary-fixed": "#0b1c30",
+                    "background": "#f7f9fb",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "outline": "#76777d",
+                    "inverse-primary": "#c1c6d9",
+                    "primary-container": "#151b29",
+                    "tertiary-container": "#0b1c30",
+                    "on-secondary-container": "#73614d",
+                    "on-primary-container": "#7e8395",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#e6e8ea",
+                    "on-surface": "#191c1e",
+                    "primary-fixed-dim": "#c1c6d9",
+                    "on-primary-fixed": "#151b29",
+                    "on-primary-fixed-variant": "#414756",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "surface-container": "#eceef0",
+                    "error": "#ba1a1a",
+                    "tertiary": "#000000",
+                    "surface-variant": "#e0e3e5",
+                    "surface-container-low": "#f2f4f6",
+                    "on-secondary-fixed-variant": "#544432",
+                    "on-background": "#191c1e",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "on-error": "#ffffff",
+                    "surface": "#f7f9fb",
+                    "surface-dim": "#d8dadc",
+                    "secondary-fixed-dim": "#dac3aa",
+                    "inverse-surface": "#2d3133",
+                    "secondary-fixed": "#f7dec5",
+                    "secondary": "#6d5b48",
+                    "on-surface-variant": "#45464c",
+                    "primary": "#000000",
+                    "secondary-container": "#f7dec5",
+                    "outline-variant": "#c6c6cc",
+                    "on-tertiary-container": "#75859d",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#585e6f",
+                    "inverse-on-surface": "#eff1f3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "gutter": "12px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "base": "8px",
+                    "lg": "24px",
+                    "container-margin": "20px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "price-display": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "title-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "price-display": ["24px", {"lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .pulse-ring {
+            position: relative;
+        }
+        .pulse-ring::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: currentColor;
+            opacity: 0.3;
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.3; }
+            100% { transform: scale(2.5); opacity: 0; }
+        }
+        .scroll-hide::-webkit-scrollbar { display: none; }
+        .scroll-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface antialiased scroll-hide">
+<!-- Top Navigation Bar -->
+<header class="docked full-width top-0 sticky z-50 bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-xl border-b border-outline-variant/30 dark:border-outline/20">
+<div class="flex flex-col gap-xs pt-base pb-sm px-container-margin w-full max-w-full">
+<div class="flex items-center justify-between">
+<button aria-label="Go back" class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-title-lg text-title-lg font-bold text-primary">Order Details</h1>
+<button aria-label="Share" class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary">share</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-screen-md mx-auto pb-32">
+<!-- Live Tracking Hero -->
+<section class="px-container-margin pt-lg">
+<div class="relative overflow-hidden rounded-xl border border-outline-variant/30 shadow-sm bg-surface-container-lowest h-[420px] group">
+<!-- Map Placeholder -->
+<div class="absolute inset-0 z-0 bg-surface-container" data-alt="A sophisticated minimalist digital map of a New York City neighborhood in a light-mode aesthetic. The map features clean, silver and slate-colored streets with a prominent black tracking path showing a vehicle's progress. Subtle glowing accents in soft gold represent the destination. The overall mood is precise, architectural, and premium, avoiding cluttered labels for a focused navigational view." data-location="New York City" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBj8_Wm4ko391Jj72q7QQNoHO7iM5yP0Q6NSXQWMKE_hEsgj3OAD5aeTNXz1pkjTe8nXTAcPg2_fg0SEQEnPaXlUYi11FLulKfNlgyHmLrri91nMn1G8ao9EQk2rKmMC9_vTrlCM-K_bsAOKqdr0PTraXHRhZXTWRQfjFc_Bbij-1ALPqVsFQfJceGDVNUSJuhdq6geIjdx86Br08W7HCmYA3_yQQEtFc0v5hTOgrorHxZ64ksu8_gGgA&quot;);">
+</div>
+<!-- Live Indicator Overlay -->
+<div class="absolute top-md left-md z-10 flex items-center gap-xs bg-surface/95 backdrop-blur-md px-md py-xs rounded-full border border-outline-variant/20 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-error pulse-ring"></span>
+<span class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant">Live Tracking</span>
+</div>
+<!-- Driver Card (Bottom Float) -->
+<div class="absolute bottom-md left-md right-md z-10 bg-surface/95 backdrop-blur-md p-md rounded-xl border border-outline-variant/20 shadow-lg flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of a friendly delivery courier wearing a clean, minimalist charcoal uniform. The background is a soft-focus urban environment in bright daylight, maintaining the high-end light-mode aesthetic. The lighting is flattering and optimistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBgpKd2y8_qQaQBYDZfprMQ8LxRFz_yRZdUq_2iobesK44yOUWIueKg-A2WTgIkWzN1fKLJSV6t3MQ5SG-Vo6kXxHyBgjxl2knOZrAr7JQJoxX4NeT-pjuuB99J2CM1QWUv77Di5eqG6ANkUTjf7-al4pzVCqEJcDezrfvxy3ATaQ4l14se88dlkAzPoaOCb9FnCJ97QC1giGUqJlh9FnoEFrwfOa0aOK72wpFl7x5YsDQ1N1Elajk5A">
+</div>
+<div>
+<p class="font-title-lg text-title-lg font-bold text-primary">Arriving in 12 min</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Courier: Marcus J. • 4.9 ★</p>
+</div>
+</div>
+<div class="flex gap-sm"><button class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:scale-95 transition-transform"><span class="material-symbols-outlined">call</span></button><button class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary hover:scale-95 transition-transform"><span class="material-symbols-outlined">whatsapp</span></button></div>
+</div>
+</div>
+</section>
+<!-- Vertical Timeline Section -->
+<section class="mt-xl px-container-margin">
+<h2 class="font-title-lg text-title-lg font-bold text-primary mb-lg">Tracking Timeline</h2>
+<div class="space-y-0 relative">
+<!-- Timeline Line -->
+<div class="absolute left-[19px] top-4 bottom-4 w-[2px] bg-outline-variant/30"></div>
+<!-- Timeline Item: Delivered (Future) -->
+<div class="relative pl-12 pb-lg opacity-40">
+<div class="absolute left-0 top-1 w-10 h-10 rounded-full bg-surface-container flex items-center justify-center z-10 border-4 border-surface">
+<span class="material-symbols-outlined text-outline text-[20px]">package_2</span>
+</div>
+<div class="pt-1">
+<p class="font-body-lg text-body-lg font-bold text-on-surface">Delivered</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Estimated by 4:30 PM today</p>
+</div>
+</div>
+<!-- Timeline Item: Out for Delivery (Active) -->
+<div class="relative pl-12 pb-lg">
+<div class="absolute left-0 top-1 w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center z-10 border-4 border-surface shadow-sm ring-2 ring-secondary/20">
+<span class="material-symbols-outlined text-secondary text-[20px]">local_shipping</span>
+</div>
+<div class="pt-1">
+<div class="flex items-center gap-xs">
+<p class="font-body-lg text-body-lg font-bold text-primary">Out for Delivery</p>
+<span class="px-2 py-0.5 bg-secondary-container text-[10px] font-bold text-secondary rounded uppercase tracking-tighter">Current</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">The courier is 2.4 miles away from your location.</p>
+<p class="font-label-md text-label-md text-outline mt-xs">Mar 12, 2:15 PM</p>
+</div>
+</div>
+<!-- Timeline Item: Shipped -->
+<div class="relative pl-12 pb-lg">
+<div class="absolute left-0 top-1 w-10 h-10 rounded-full bg-primary-container flex items-center justify-center z-10 border-4 border-surface">
+<span class="material-symbols-outlined text-on-primary-container text-[20px]">check</span>
+</div>
+<div class="pt-1">
+<p class="font-body-lg text-body-lg font-bold text-on-surface">Shipped from Distribution Center</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Package left the New Jersey hub.</p>
+<p class="font-label-md text-label-md text-outline mt-xs">Mar 11, 11:30 PM</p>
+</div>
+</div>
+<!-- Timeline Item: Placed -->
+<div class="relative pl-12">
+<div class="absolute left-0 top-1 w-10 h-10 rounded-full bg-primary-container flex items-center justify-center z-10 border-4 border-surface">
+<span class="material-symbols-outlined text-on-primary-container text-[20px]">check</span>
+</div>
+<div class="pt-1">
+<p class="font-body-lg text-body-lg font-bold text-on-surface">Order Placed &amp; Confirmed</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Order #AC-99420-LX</p>
+<p class="font-label-md text-label-md text-outline mt-xs">Mar 11, 10:15 AM</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Order Summary Section -->
+<section class="mt-xl px-container-margin">
+<div class="p-lg bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-[0px_4px_20px_rgba(0,0,0,0.04)]">
+<div class="flex items-center justify-between mb-lg">
+<h3 class="font-title-lg text-title-lg font-bold text-primary">Order Summary</h3>
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span class="font-label-md text-label-md">Download Invoice</span>
+</button>
+</div>
+<!-- Product List -->
+<div class="space-y-lg">
+<div class="flex gap-md">
+<div class="w-20 h-20 bg-surface-container-low rounded-lg border border-outline-variant/20 overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close-up detailed shot of a premium obsidian black wireless headphone set with brushed metal finishes. The lighting is dramatic and editorial, highlighting the texture of the leather cushions and the sleek matte headband against a bright, airy white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-TjHCZlt_yaqcHzC3pDHTVEdrkh95MHhJYOcgBUVwvuX0odL5mm5xJ_g7m6LE2eC0G55omDj3xSfbm4Z5jfhMRHAJQRoem3B2mn5zpKFJOd8HuObmpSziwkp3RnLpGmNh-NzNMTE2gkb5yIU7_DXpsEx1LX80mUgS9FvsOuqjHkqTJ3xfX1tG3rFmi_AxdL51G7FTf4DhXMmqlUbAc7eW32aJ8cF5raQ21H5oHq4XDuCz8aNtXzIqHQ">
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<p class="font-body-lg text-body-lg font-bold text-primary">Aura Pro Wireless ANC</p>
+<p class="font-title-lg text-title-lg font-bold text-primary">$349.00</p>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Space Black • Qty: 1</p>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="w-20 h-20 bg-surface-container-low rounded-lg border border-outline-variant/20 overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A premium vegan leather travel case in a soft sandstone color. The design is minimalist and elegant, showing off the fine stitching and high-quality material. The product is centered in a brightly lit studio environment with clean shadows and a sophisticated light-mode palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAISmrVetfFEeN_1Ixhtik65Vh4pKR725QD0rajVqO5MNplHSaKsbC-JBNHH6Bz_GeJi0j0JIQBoYW5YedW9pIFTFTUqAKizrU04SrqhdDwufokC-NGk_jQFF08N2VdGzhGLUFMLafaCw7HDyzd-NwZi7DnAkKrWE2iuVaVAWjKp8t-JNCUAkZf-z6dPDIe6FMGJpC-lnRthplAiXJznDb_UF98BeNqXaBt_XplAGlpYS-raRAQciZi0Q">
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<p class="font-body-lg text-body-lg font-bold text-primary">Vegan Leather Travel Case</p>
+<p class="font-title-lg text-title-lg font-bold text-primary">$45.00</p>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Sandstone • Qty: 1</p>
+</div>
+</div>
+</div>
+<!-- Price Breakdown -->
+<div class="mt-xl pt-lg border-t border-outline-variant/20 space-y-sm">
+<div class="flex justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">Subtotal</span>
+<span class="font-body-md text-body-md text-primary">$394.00</span>
+</div>
+<div class="flex justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">Shipping</span>
+<span class="font-body-md text-body-md text-primary">Free</span>
+</div>
+<div class="flex justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">Tax</span>
+<span class="font-body-md text-body-md text-primary">$31.52</span>
+</div>
+<div class="flex justify-between pt-md border-t border-dashed border-outline-variant/40">
+<span class="font-title-lg text-title-lg font-bold text-primary">Total</span>
+<span class="font-price-display text-price-display text-primary">$425.52</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Shipping Info -->
+<section class="mt-lg px-container-margin">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="p-lg bg-surface-container-low/50 rounded-xl border border-outline-variant/20">
+<h4 class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant mb-md">Shipping Address</h4>
+<p class="font-body-lg text-body-lg font-bold text-primary">Jane Doe</p>
+<p class="font-body-md text-body-md text-on-surface-variant">1248 North Alpine Dr.<br>Los Angeles, CA 90210</p>
+</div>
+<div class="p-lg bg-surface-container-low/50 rounded-xl border border-outline-variant/20">
+<h4 class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant mb-md">Payment Method</h4>
+<div class="flex items-center gap-sm">
+<div class="w-10 h-6 bg-primary rounded flex items-center justify-center">
+<span class="text-[10px] text-on-primary font-bold">VISA</span>
+</div>
+<p class="font-body-md text-body-md text-primary">Ending in •••• 4242</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Action Button -->
+<section class="mt-xl px-container-margin mb-lg">
+<button class="w-full py-md bg-primary text-on-primary font-title-lg text-title-lg rounded-xl hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-sm shadow-lg shadow-primary/10">
+<span class="material-symbols-outlined">help_outline</span>
+                Need Help with this Order?
+            </button>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Contextual Check: Top level destination usually has this, but order details is sub-page. 
+         Following "Automatic Suppression" rule: exclude if task-focused/back-action sub-page. 
+         However, the system mandates keeping navigation shell if it sits under defined categories. 
+         Orders is a category. I will include the nav with 'Orders' active.) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter py-sm pb-6 bg-surface/95 dark:bg-surface-dim/95 backdrop-blur-md border-t border-outline-variant/20 shadow-[0px_-4px_20px_rgba(0,0,0,0.04)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-md text-label-md">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="font-label-md text-label-md">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed font-bold active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:text-primary transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for haptic feedback simulation
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('click', () => {
+                if (window.navigator.vibrate) {
+                    window.navigator.vibrate(10);
+                }
+            });
+        });
+
+        // Simple parallax or tracking effect on map
+        window.addEventListener('scroll', () => {
+            const mapContainer = document.querySelector('[data-location]');
+            if (mapContainer) {
+                const scroll = window.scrollY;
+                mapContainer.style.backgroundPositionY = `${scroll * 0.1}px`;
+            }
+        });
+    </script>
+
+
+
+
+</body></html>

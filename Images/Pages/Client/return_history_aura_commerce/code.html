@@ -1,0 +1,265 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Aura Commerce - Return History</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e0e3e5",
+                        "background": "#f7f9fb",
+                        "primary-container": "#151b29",
+                        "inverse-surface": "#2d3133",
+                        "tertiary-container": "#0b1c30",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-primary-fixed-variant": "#414756",
+                        "surface-bright": "#f7f9fb",
+                        "on-surface-variant": "#45464c",
+                        "outline-variant": "#c6c6cc",
+                        "secondary": "#6d5b48",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#dac3aa",
+                        "on-secondary-fixed-variant": "#544432",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-dim": "#d8dadc",
+                        "tertiary": "#000000",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eceef0",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#f7dec5",
+                        "on-secondary-container": "#73614d",
+                        "surface": "#f7f9fb",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "on-secondary-fixed": "#26190a",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#c1c6d9",
+                        "surface-tint": "#585e6f",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#76777d",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#d3e4fe",
+                        "on-background": "#191c1e",
+                        "primary": "#000000",
+                        "secondary-container": "#f7dec5",
+                        "on-surface": "#191c1e",
+                        "on-tertiary-container": "#75859d",
+                        "inverse-primary": "#c1c6d9",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#151b29",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#dde2f6",
+                        "on-primary-container": "#7e8395",
+                        "surface-container-low": "#f2f4f6",
+                        "inverse-on-surface": "#eff1f3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "md": "16px",
+                        "gutter": "12px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "container-margin": "20px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "price-display": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "price-display": ["24px", { "lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 backdrop-blur-xl bg-surface/90 dark:bg-surface-container-lowest/90 border-b border-transparent md:border-outline-variant/30 dark:md:border-outline/20 md:hidden">
+<div class="flex items-center justify-between px-container-margin h-16 w-full">
+<button class="text-primary dark:text-on-surface hover:opacity-70 transition-opacity active:scale-95 duration-300 w-12 h-12 flex items-center justify-start">
+<span class="material-symbols-outlined font-title-lg text-title-lg" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile tracking-tighter text-primary dark:text-on-surface">Aura Commerce</h1>
+<button class="text-primary dark:text-on-surface hover:opacity-70 transition-opacity active:scale-95 duration-300 w-12 h-12 flex items-center justify-end">
+<span class="material-symbols-outlined font-title-lg text-title-lg" style="font-variation-settings: 'FILL' 0;">shopping_bag</span>
+</button>
+</div>
+</header>
+<!-- Desktop Sidebar (Hidden on mobile) -->
+<aside class="hidden md:flex flex-col w-64 fixed h-full bg-surface-container-lowest border-r border-outline-variant/30 dark:border-outline/20 pt-10 px-6 z-40">
+<div class="mb-12">
+<h1 class="font-headline-lg text-headline-lg tracking-tighter text-primary dark:text-on-surface">Aura</h1>
+</div>
+<nav class="flex flex-col gap-4">
+<a class="flex items-center gap-4 py-3 px-4 rounded-lg text-on-surface-variant dark:text-outline hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="font-title-lg text-title-lg">Shop</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-lg bg-primary-container text-on-primary-container font-bold" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">assignment_return</span>
+<span class="font-title-lg text-title-lg">Returns</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-lg text-on-surface-variant dark:text-outline hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined">military_tech</span>
+<span class="font-title-lg text-title-lg">Rewards</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 rounded-lg text-on-surface-variant dark:text-outline hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-title-lg text-title-lg">Profile</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="pt-20 px-container-margin md:pl-72 md:pt-16 max-w-7xl mx-auto">
+<div class="flex items-end justify-between mb-lg mt-sm md:mt-xl">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-xs">Return History</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Track and manage your recent returns.</p>
+</div>
+<button class="hidden md:flex items-center gap-2 px-6 py-3 bg-primary text-on-primary rounded-full hover:bg-inverse-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span class="font-label-md text-label-md">Start New Return</span>
+</button>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-gutter mb-xl overflow-x-auto pb-2 scrollbar-hide">
+<button class="px-5 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md whitespace-nowrap">All Returns</button>
+<button class="px-5 py-2 rounded-full border border-outline bg-surface-container-lowest text-on-surface font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-low">Processing</button>
+<button class="px-5 py-2 rounded-full border border-outline bg-surface-container-lowest text-on-surface font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-low">Refunded</button>
+<button class="px-5 py-2 rounded-full border border-outline bg-surface-container-lowest text-on-surface font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-low">Action Required</button>
+</div>
+<!-- Returns List Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-lg">
+<!-- Return Card 1: Processing -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/50 p-6 flex flex-col md:flex-row gap-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-full md:w-32 h-32 bg-surface-container-low rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A meticulously styled product shot of a sleek, minimalist ceramic coffee mug in matte black. The mug rests on a raw concrete surface, illuminated by natural, diffused daylight that highlights its smooth texture. The background is a crisp, off-white studio setting, embodying a premium, high-end e-commerce aesthetic. Soft shadows emphasize the object's form without distraction." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSJHrYq-Qp1kCMKavUnN5TpGnxzLRuxWqo-nGJ2Gf96llk-ymYQfx2Wlc3MsQzEwIja5lOg0R4_ip5PjKSH25u-3MqQeOLC4EN3pxUW8uzrykDaBHoThGnrcTjn7pxz1p4D5GpNObToOaQ3MixE-Qmu5ojJ1Eu4u-WJpaGs2RHR5Qa_32CCarYoFgCve_ra2CGE3stwIIqthKbBvEfeDLNdAyVLqLE2iivBE0ANtV1F6rjOrugWQVQGw">
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-2">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block mb-1">Order #AUR-99382</span>
+<h3 class="font-title-lg text-title-lg text-on-surface">Matte Ceramic Mug</h3>
+</div>
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-secondary mr-2"></span> Processing
+                            </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Return initiated on Oct 24, 2023. Package in transit.</p>
+</div>
+<div class="flex items-center gap-4 mt-auto">
+<button class="flex-1 py-2 px-4 rounded-lg border border-outline text-on-surface font-label-md text-label-md hover:bg-surface-container-low transition-colors">Track Package</button>
+<button class="w-10 h-10 rounded-lg flex items-center justify-center border border-outline text-on-surface hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Return Card 2: Refunded -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/50 p-6 flex flex-col md:flex-row gap-6 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-full md:w-32 h-32 bg-surface-container-low rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover grayscale opacity-80" data-alt="An elegant flat lay of a luxury leather wallet in saddle brown. The wallet is positioned on a clean, light grey linen background with subtle textural depth. Perfect, high-key studio lighting reveals the fine grain of the leather and precise stitching. The overall composition is minimalist, sophisticated, and tailored for a premium mobile e-commerce platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoxGO7wOKNWbqO5eI1YMOm2LfC3W-kLXmW8ImooLz9k7ZWoI0vzSZElUUw6fYOSR6oG_67auuOdL2ggCCQNGsi2_fxVSxFxlPI5FvkHqaGx2xL0Qs22CPN4t1_uUGhfTQ90CX5xN931ii6VYiIA8PuYM4GgAH_Llw1GJLzT8Oh00Ie-dsgLfCATwpejUj7aY05j7ZZybXoL5W_nSxOUg4z8kLwzhyLZQUID8O9IDoaE7VBPAuMZt8f7Q">
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-2">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block mb-1">Order #AUR-88210</span>
+<h3 class="font-title-lg text-title-lg text-on-surface">Saddle Leather Wallet</h3>
+</div>
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px] mr-1">check_circle</span> Refunded
+                            </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">$85.00 refunded to original payment method on Oct 12.</p>
+</div>
+<div class="flex items-center gap-4 mt-auto">
+<button class="flex-1 py-2 px-4 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors">View Receipt</button>
+</div>
+</div>
+</div>
+<!-- Return Card 3: Action Required -->
+<div class="bg-surface-container-lowest rounded-xl border-2 border-error/20 p-6 flex flex-col md:flex-row gap-6 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-error"></div>
+<div class="w-full md:w-32 h-32 bg-surface-container-low rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A close-up, high-resolution product image of premium wireless over-ear headphones in an anodized silver finish. The headphones sit on a pristine white acrylic pedestal. The lighting is sharp and directional, creating distinct highlights on the metallic surfaces to emphasize build quality. The setting is minimal, echoing a high-end tech boutique aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCua1TkR3xjxdLE-fzQzQT3ZY_QebIcuyD1GuN3axHDieHerdOBbj4IAIbY5JGxBFKXRBp9gLy6Nga39OoGV2Y4R8CbOKiTNcJL3xKbtf6EGaY_b4ze3ME0ExdvtdInDFfp584hTu3rEUFOyNG8IYRkck10aLqb8NtJOD521GuShPbO7mg8aBEqKJPmEA2Y9BVFm4jke2nrOzhpknQ0YVh_0CG1qSHj5GfgmZMkxACzKjzLW1qBIyWT8A">
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-2">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block mb-1">Order #AUR-77541</span>
+<h3 class="font-title-lg text-title-lg text-on-surface">Acoustic Pro Headphones</h3>
+</div>
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-error-container text-on-error-container font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px] mr-1">warning</span> Action Required
+                            </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Please print and attach the return shipping label by Nov 01.</p>
+</div>
+<div class="flex items-center gap-4 mt-auto">
+<button class="flex-1 py-2 px-4 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-inverse-surface transition-colors">Print Label</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 pb-safe backdrop-blur-xl border-t border-outline-variant/30 dark:border-outline/20 bg-surface/90 dark:bg-surface-container-lowest/90 md:hidden">
+<div class="flex justify-around items-center h-20 w-full px-base">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors active:scale-90 duration-200 w-16 h-16 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">storefront</span>
+<span class="font-label-md text-label-md">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-on-surface font-semibold hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors active:scale-90 duration-200 w-16 h-16 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">assignment_return</span>
+<span class="font-label-md text-label-md">Returns</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors active:scale-90 duration-200 w-16 h-16 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">military_tech</span>
+<span class="font-label-md text-label-md">Rewards</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors active:scale-90 duration-200 w-16 h-16 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-container-low dark:hover:bg-surface-container transition-colors active:scale-90 duration-200 w-16 h-16 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">menu</span>
+<span class="font-label-md text-label-md">More</span>
+</a>
+</div>
+</nav>
+</body></html>

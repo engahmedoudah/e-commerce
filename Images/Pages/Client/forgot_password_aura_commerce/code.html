@@ -1,0 +1,239 @@
+<!DOCTYPE html><html class="h-full" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Aura Commerce - Forgot Password</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-high": "#e6e8ea",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "on-background": "#191c1e",
+                        "tertiary-container": "#0b1c30",
+                        "primary-fixed": "#dde2f6",
+                        "tertiary": "#000000",
+                        "surface-dim": "#d8dadc",
+                        "on-primary-fixed-variant": "#414756",
+                        "secondary-fixed-dim": "#dac3aa",
+                        "surface-container-low": "#f2f4f6",
+                        "primary": "#000000",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#f7dec5",
+                        "outline": "#76777d",
+                        "on-primary-container": "#7e8395",
+                        "outline-variant": "#c6c6cc",
+                        "tertiary-fixed": "#d3e4fe",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#eff1f3",
+                        "inverse-primary": "#c1c6d9",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "surface-container": "#eceef0",
+                        "on-surface-variant": "#45464c",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#151b29",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#544432",
+                        "on-secondary-fixed": "#26190a",
+                        "on-surface": "#191c1e",
+                        "surface": "#f7f9fb",
+                        "inverse-surface": "#2d3133",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#585e6f",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#151b29",
+                        "surface-variant": "#e0e3e5",
+                        "secondary-container": "#f7dec5",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary": "#6d5b48",
+                        "primary-fixed-dim": "#c1c6d9",
+                        "on-secondary-container": "#73614d",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "background": "#f7f9fb",
+                        "on-tertiary-container": "#75859d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-margin": "20px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "gutter": "12px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "price-display": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "title-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "price-display": ["24px", { "lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background h-full flex flex-col font-body-md text-on-background selection:bg-surface-container-high selection:text-primary overflow-x-hidden">
+<!-- Top Navigation (Contextual 'Back' - Linear Flow) -->
+<header class="flex items-center justify-between px-container-margin py-lg absolute top-0 w-full z-10">
+<button aria-label="Back to Sign In" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors duration-200">
+<span class="material-symbols-outlined text-[24px] text-on-background">arrow_back</span>
+</button>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 flex flex-col justify-center px-container-margin md:items-center">
+<div class="w-full max-w-[400px] flex flex-col gap-lg animate-fade-in-up">
+<!-- Header Section -->
+<div class="flex flex-col gap-sm pt-xl">
+<span class="material-symbols-outlined text-[48px] text-primary mb-sm">lock_reset</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-background tracking-tight">Forgot Password</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Enter the email address associated with your account, and we'll send you a link to reset your password.
+                </p>
+</div>
+<!-- Form Section -->
+<form class="flex flex-col gap-lg mt-base" onsubmit="event.preventDefault(); handleResetSubmit(this);">
+<!-- Email Input -->
+<div class="flex flex-col gap-xs group">
+<label class="font-label-md text-label-md text-on-surface-variant sr-only" for="email">Email Address</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-sm text-[20px] text-outline group-focus-within:text-primary transition-colors">mail</span>
+<input class="w-full bg-surface-container-low text-on-background font-body-md text-body-md rounded-lg py-sm pl-[44px] pr-sm focus:outline-none focus:ring-[1.5px] focus:ring-primary focus:bg-surface transition-all placeholder:text-outline" id="email" name="email" placeholder="name@example.com" required="" type="email">
+</div>
+<span class="text-[12px] text-error hidden" id="email-error">Please enter a valid email address.</span>
+</div>
+<!-- Action Button -->
+<button class="w-full bg-primary text-on-primary font-title-lg text-title-lg py-[14px] rounded-lg shadow-sm hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center relative overflow-hidden group" id="submit-btn" type="submit">
+<span class="relative z-10 transition-opacity duration-200" id="btn-text">Send Reset Link</span>
+<!-- Loading Spinner (Hidden by default) -->
+<svg class="animate-spin h-5 w-5 text-on-primary absolute hidden" fill="none" id="btn-spinner" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path>
+</svg>
+</button>
+</form>
+<!-- Success Message (Hidden by default) -->
+<div class="hidden flex-col items-center justify-center py-lg gap-sm animate-fade-in text-center" id="success-state">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center mb-sm">
+<span class="material-symbols-outlined text-[32px] text-primary">mark_email_read</span>
+</div>
+<h2 class="font-title-lg text-title-lg text-on-background">Check your email</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">We've sent a password reset link to <span class="font-medium text-on-background" id="sent-email"></span>.</p>
+<button class="mt-md font-label-md text-label-md text-primary underline hover:text-on-surface-variant transition-colors" onclick="resetForm()">Try another email</button>
+</div>
+<!-- Alternative Navigation -->
+<div class="flex justify-center mt-sm" id="alt-nav">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-xs" href="#">
+                    Back to Sign In
+                </a>
+</div>
+</div>
+</main>
+<style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.3s ease-out forwards;
+        }
+    </style>
+<script>
+        function handleResetSubmit(form) {
+            const emailInput = form.querySelector('#email');
+            const btnText = form.querySelector('#btn-text');
+            const btnSpinner = form.querySelector('#btn-spinner');
+            const submitBtn = form.querySelector('#submit-btn');
+            
+            // Basic validation simulation
+            if(!emailInput.value.includes('@')) {
+                emailInput.classList.add('ring-[1.5px]', 'ring-error', 'bg-error-container/20');
+                form.querySelector('#email-error').classList.remove('hidden');
+                return;
+            }
+            
+            // Reset visual errors
+            emailInput.classList.remove('ring-[1.5px]', 'ring-error', 'bg-error-container/20');
+            form.querySelector('#email-error').classList.add('hidden');
+
+            // Loading state
+            btnText.style.opacity = '0';
+            btnSpinner.classList.remove('hidden');
+            submitBtn.disabled = true;
+
+            // Simulate API call
+            setTimeout(() => {
+                form.classList.add('hidden');
+                document.getElementById('alt-nav').classList.add('hidden');
+                
+                const successState = document.getElementById('success-state');
+                document.getElementById('sent-email').textContent = emailInput.value;
+                successState.classList.remove('hidden');
+                successState.classList.add('flex');
+                
+                // Reset button for next time (though usually wouldn't be seen immediately)
+                btnText.style.opacity = '1';
+                btnSpinner.classList.add('hidden');
+                submitBtn.disabled = false;
+                
+            }, 1200);
+        }
+        
+        function resetForm() {
+            document.querySelector('form').classList.remove('hidden');
+            document.getElementById('alt-nav').classList.remove('hidden');
+            document.getElementById('success-state').classList.add('hidden');
+            document.getElementById('success-state').classList.remove('flex');
+            document.getElementById('email').value = '';
+            document.getElementById('email').focus();
+        }
+
+        // Haptic feedback simulation on touch
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('pointerdown', () => {
+                if(navigator.vibrate) navigator.vibrate(10); // Light haptic
+            });
+        });
+    </script>
+</body></html>

@@ -6,7 +6,6 @@ export interface IUser extends IBaseEntity {
   Email: string;
   Phone: string;
   Password: string;
-  ConfirmPassword: string;
   ImageID?: string;
   Image?: IImage;
   IsActivated: boolean;

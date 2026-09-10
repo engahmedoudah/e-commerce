@@ -1,0 +1,325 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>OTP Verification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "surface-container-highest": "#e0e3e5",
+                            "surface-container-high": "#e6e8ea",
+                            "tertiary-fixed-dim": "#b7c8e1",
+                            "on-background": "#191c1e",
+                            "tertiary-container": "#0b1c30",
+                            "primary-fixed": "#dde2f6",
+                            "tertiary": "#000000",
+                            "surface-dim": "#d8dadc",
+                            "on-primary-fixed-variant": "#414756",
+                            "secondary-fixed-dim": "#dac3aa",
+                            "surface-container-low": "#f2f4f6",
+                            "primary": "#000000",
+                            "error-container": "#ffdad6",
+                            "secondary-fixed": "#f7dec5",
+                            "outline": "#76777d",
+                            "on-primary-container": "#7e8395",
+                            "outline-variant": "#c6c6cc",
+                            "tertiary-fixed": "#d3e4fe",
+                            "on-error": "#ffffff",
+                            "inverse-on-surface": "#eff1f3",
+                            "inverse-primary": "#c1c6d9",
+                            "on-tertiary-fixed": "#0b1c30",
+                            "surface-container": "#eceef0",
+                            "on-surface-variant": "#45464c",
+                            "on-secondary": "#ffffff",
+                            "on-primary-fixed": "#151b29",
+                            "surface-container-lowest": "#ffffff",
+                            "on-secondary-fixed-variant": "#544432",
+                            "on-secondary-fixed": "#26190a",
+                            "on-surface": "#191c1e",
+                            "surface": "#f7f9fb",
+                            "inverse-surface": "#2d3133",
+                            "error": "#ba1a1a",
+                            "surface-tint": "#585e6f",
+                            "on-error-container": "#93000a",
+                            "primary-container": "#151b29",
+                            "surface-variant": "#e0e3e5",
+                            "secondary-container": "#f7dec5",
+                            "on-tertiary": "#ffffff",
+                            "on-primary": "#ffffff",
+                            "secondary": "#6d5b48",
+                            "primary-fixed-dim": "#c1c6d9",
+                            "on-secondary-container": "#73614d",
+                            "surface-bright": "#f7f9fb",
+                            "on-tertiary-fixed-variant": "#38485d",
+                            "background": "#f7f9fb",
+                            "on-tertiary-container": "#75859d"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "container-margin": "20px",
+                            "base": "8px",
+                            "sm": "12px",
+                            "lg": "24px",
+                            "xs": "4px",
+                            "xl": "32px",
+                            "md": "16px",
+                            "gutter": "12px"
+                    },
+                    "fontFamily": {
+                            "headline-lg-mobile": ["Inter"],
+                            "label-md": ["Inter"],
+                            "body-md": ["Inter"],
+                            "display-lg": ["Inter"],
+                            "headline-lg": ["Inter"],
+                            "price-display": ["Inter"],
+                            "body-lg": ["Inter"],
+                            "title-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                            "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "600"}],
+                            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                            "price-display": ["24px", {"lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                            "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .numpad-btn {
+            transition: background-color 0.15s ease, transform 0.1s ease;
+        }
+        .numpad-btn:active {
+            background-color: var(--color-surface-container-highest);
+            transform: scale(0.95);
+        }
+        .otp-input:focus {
+            outline: none;
+            border-color: #000;
+            box-shadow: 0 0 0 4px rgba(0,0,0,0.05);
+        }
+        /* Hide default number input arrows */
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation (Contextual departure, simplified) -->
+<header class="w-full flex items-center justify-between px-container-margin py-lg pt-[calc(24px+env(safe-area-inset-top))]">
+<button aria-label="Go back" class="p-xs -ml-xs rounded-full hover:bg-surface-container-low transition-colors" onclick="history.back()" type="button">
+<span class="material-symbols-outlined text-primary text-[28px]" style="font-variation-settings: 'FILL' 0, 'wght' 300;">arrow_back</span>
+</button>
+<!-- No global nav elements here, focused transactional screen -->
+<div class="w-[28px]"></div> <!-- Spacer for flex balance -->
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col px-container-margin max-w-md mx-auto w-full pb-safe-area">
+<!-- Header Text -->
+<div class="mt-lg mb-xl">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-base">Verify it's you</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                We sent a 6-digit code to <br>
+<span class="font-bold text-primary">+1 (555) 019-2834</span>
+</p>
+</div>
+<!-- OTP Input Fields -->
+<div class="flex justify-between gap-base mb-xl" id="otp-container">
+<input aria-label="Digit 1" class="otp-input w-12 h-14 bg-surface-container-low border border-transparent rounded-lg text-center font-price-display text-price-display text-primary focus:border-primary focus:bg-surface-lowest transition-all" maxlength="1" type="number">
+<input aria-label="Digit 2" class="otp-input w-12 h-14 bg-surface-container-low border border-transparent rounded-lg text-center font-price-display text-price-display text-primary focus:border-primary focus:bg-surface-lowest transition-all" maxlength="1" type="number">
+<input aria-label="Digit 3" class="otp-input w-12 h-14 bg-surface-container-low border border-transparent rounded-lg text-center font-price-display text-price-display text-primary focus:border-primary focus:bg-surface-lowest transition-all" maxlength="1" type="number">
+<input aria-label="Digit 4" class="otp-input w-12 h-14 bg-surface-container-low border border-transparent rounded-lg text-center font-price-display text-price-display text-primary focus:border-primary focus:bg-surface-lowest transition-all" maxlength="1" type="number">
+<input aria-label="Digit 5" class="otp-input w-12 h-14 bg-surface-container-low border border-transparent rounded-lg text-center font-price-display text-price-display text-primary focus:border-primary focus:bg-surface-lowest transition-all" maxlength="1" type="number">
+<input aria-label="Digit 6" class="otp-input w-12 h-14 bg-surface-container-low border border-transparent rounded-lg text-center font-price-display text-price-display text-primary focus:border-primary focus:bg-surface-lowest transition-all" maxlength="1" type="number">
+</div>
+<!-- Resend Code -->
+<div class="flex justify-center mb-auto">
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-xs" id="resend-btn">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+                Resend code in <span class="font-bold" id="timer">00:59</span>
+</button>
+</div>
+<!-- Custom Numpad -->
+<div class="mt-8 pb-lg">
+<div class="grid grid-cols-3 gap-y-sm gap-x-sm">
+<!-- Row 1 -->
+<button class="numpad-btn h-16 rounded-xl flex items-center justify-center font-price-display text-price-display text-primary bg-surface" onclick="addDigit('1')">1</button>
+<button class="numpad-btn h-16 rounded-xl flex flex-col items-center justify-center bg-surface" onclick="addDigit('2')">
+<span class="font-price-display text-price-display text-primary leading-none">2</span>
+<span class="font-label-md text-[10px] text-outline mt-1 leading-none">ABC</span>
+</button>
+<button class="numpad-btn h-16 rounded-xl flex flex-col items-center justify-center bg-surface" onclick="addDigit('3')">
+<span class="font-price-display text-price-display text-primary leading-none">3</span>
+<span class="font-label-md text-[10px] text-outline mt-1 leading-none">DEF</span>
+</button>
+<!-- Row 2 -->
+<button class="numpad-btn h-16 rounded-xl flex flex-col items-center justify-center bg-surface" onclick="addDigit('4')">
+<span class="font-price-display text-price-display text-primary leading-none">4</span>
+<span class="font-label-md text-[10px] text-outline mt-1 leading-none">GHI</span>
+</button>
+<button class="numpad-btn h-16 rounded-xl flex flex-col items-center justify-center bg-surface" onclick="addDigit('5')">
+<span class="font-price-display text-price-display text-primary leading-none">5</span>
+<span class="font-label-md text-[10px] text-outline mt-1 leading-none">JKL</span>
+</button>
+<button class="numpad-btn h-16 rounded-xl flex flex-col items-center justify-center bg-surface" onclick="addDigit('6')">
+<span class="font-price-display text-price-display text-primary leading-none">6</span>
+<span class="font-label-md text-[10px] text-outline mt-1 leading-none">MNO</span>
+</button>
+<!-- Row 3 -->
+<button class="numpad-btn h-16 rounded-xl flex flex-col items-center justify-center bg-surface" onclick="addDigit('7')">
+<span class="font-price-display text-price-display text-primary leading-none">7</span>
+<span class="font-label-md text-[10px] text-outline mt-1 leading-none">PQRS</span>
+</button>
+<button class="numpad-btn h-16 rounded-xl flex flex-col items-center justify-center bg-surface" onclick="addDigit('8')">
+<span class="font-price-display text-price-display text-primary leading-none">8</span>
+<span class="font-label-md text-[10px] text-outline mt-1 leading-none">TUV</span>
+</button>
+<button class="numpad-btn h-16 rounded-xl flex flex-col items-center justify-center bg-surface" onclick="addDigit('9')">
+<span class="font-price-display text-price-display text-primary leading-none">9</span>
+<span class="font-label-md text-[10px] text-outline mt-1 leading-none">WXYZ</span>
+</button>
+<!-- Row 4 -->
+<div class="h-16"></div> <!-- Empty cell -->
+<button class="numpad-btn h-16 rounded-xl flex items-center justify-center font-price-display text-price-display text-primary bg-surface" onclick="addDigit('0')">0</button>
+<button aria-label="Delete" class="numpad-btn h-16 rounded-xl flex items-center justify-center text-primary bg-surface" onclick="deleteDigit()">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 0, 'wght' 400;">backspace</span>
+</button>
+</div>
+<!-- Action Button -->
+<button class="w-full mt-lg py-sm px-lg bg-primary text-on-primary font-title-lg text-title-lg rounded-full opacity-50 pointer-events-none transition-all duration-300" id="verify-btn">
+                Verify
+            </button>
+</div>
+</main>
+<script>
+        const inputs = document.querySelectorAll('.otp-input');
+        const verifyBtn = document.getElementById('verify-btn');
+        let currentInputIndex = 0;
+
+        // Initialize focus
+        inputs[0].focus();
+
+        // Numpad logic
+        function addDigit(digit) {
+            if (currentInputIndex < inputs.length) {
+                inputs[currentInputIndex].value = digit;
+                
+                // Trigger visual feedback on haptic (simulated)
+                if (window.navigator && window.navigator.vibrate) {
+                    window.navigator.vibrate(50);
+                }
+
+                currentInputIndex++;
+                if (currentInputIndex < inputs.length) {
+                    inputs[currentInputIndex].focus();
+                } else {
+                    inputs[currentInputIndex - 1].blur();
+                }
+                checkComplete();
+            }
+        }
+
+        function deleteDigit() {
+            if (currentInputIndex > 0) {
+                if (currentInputIndex === inputs.length && inputs[currentInputIndex - 1].value !== '') {
+                    // We are at the end, and the last box has a value, just clear it
+                    inputs[currentInputIndex - 1].value = '';
+                } else {
+                    // Move back and clear
+                    currentInputIndex--;
+                    inputs[currentInputIndex].value = '';
+                    inputs[currentInputIndex].focus();
+                }
+                
+                if (window.navigator && window.navigator.vibrate) {
+                    window.navigator.vibrate(30);
+                }
+                checkComplete();
+            }
+        }
+
+        // Handle physical keyboard support
+        inputs.forEach((input, index) => {
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace') {
+                    e.preventDefault();
+                    // Sync with virtual numpad logic
+                    currentInputIndex = index + (input.value !== '' ? 1 : 0);
+                    deleteDigit();
+                } else if (e.key >= '0' && e.key <= '9') {
+                    e.preventDefault();
+                    currentInputIndex = index;
+                    addDigit(e.key);
+                } else if (e.key === 'ArrowLeft' && index > 0) {
+                    currentInputIndex = index - 1;
+                    inputs[currentInputIndex].focus();
+                } else if (e.key === 'ArrowRight' && index < inputs.length - 1) {
+                    currentInputIndex = index + 1;
+                    inputs[currentInputIndex].focus();
+                }
+            });
+
+            // Prevent default behavior on input to force use of keydown
+            input.addEventListener('input', (e) => {
+               e.preventDefault();
+            });
+            
+            input.addEventListener('focus', () => {
+                currentInputIndex = index;
+            });
+        });
+
+        function checkComplete() {
+            const isComplete = Array.from(inputs).every(input => input.value !== '');
+            if (isComplete) {
+                verifyBtn.classList.remove('opacity-50', 'pointer-events-none');
+                verifyBtn.classList.add('shadow-[0_4px_20px_rgba(0,0,0,0.08)]');
+                // Auto-verify simulation
+                setTimeout(() => {
+                   verifyBtn.innerHTML = '<span class="material-symbols-outlined animate-spin" style="font-variation-settings: \'wght\' 200;">progress_activity</span>';
+                }, 300);
+            } else {
+                verifyBtn.classList.add('opacity-50', 'pointer-events-none');
+                verifyBtn.classList.remove('shadow-[0_4px_20px_rgba(0,0,0,0.08)]');
+                verifyBtn.innerText = 'Verify';
+            }
+        }
+
+        // Timer Logic
+        let timeLeft = 59;
+        const timerEl = document.getElementById('timer');
+        const resendBtn = document.getElementById('resend-btn');
+
+        const countdown = setInterval(() => {
+            timeLeft--;
+            const seconds = timeLeft < 10 ? `0${timeLeft}` : timeLeft;
+            timerEl.textContent = `00:${seconds}`;
+
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                timerEl.textContent = '';
+                resendBtn.innerHTML = 'Resend Code';
+                resendBtn.classList.remove('text-on-surface-variant');
+                resendBtn.classList.add('text-primary', 'font-bold');
+            }
+        }, 1000);
+
+    </script>
+</body></html>

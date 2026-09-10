@@ -1,0 +1,319 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Aura Commerce - Maintenance</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config injected from design system -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#e0e3e5",
+                      "surface-container-high": "#e6e8ea",
+                      "tertiary-fixed-dim": "#b7c8e1",
+                      "on-background": "#191c1e",
+                      "tertiary-container": "#0b1c30",
+                      "primary-fixed": "#dde2f6",
+                      "tertiary": "#000000",
+                      "surface-dim": "#d8dadc",
+                      "on-primary-fixed-variant": "#414756",
+                      "secondary-fixed-dim": "#dac3aa",
+                      "surface-container-low": "#f2f4f6",
+                      "primary": "#000000",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed": "#f7dec5",
+                      "outline": "#76777d",
+                      "on-primary-container": "#7e8395",
+                      "outline-variant": "#c6c6cc",
+                      "tertiary-fixed": "#d3e4fe",
+                      "on-error": "#ffffff",
+                      "inverse-on-surface": "#eff1f3",
+                      "inverse-primary": "#c1c6d9",
+                      "on-tertiary-fixed": "#0b1c30",
+                      "surface-container": "#eceef0",
+                      "on-surface-variant": "#45464c",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed": "#151b29",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed-variant": "#544432",
+                      "on-secondary-fixed": "#26190a",
+                      "on-surface": "#191c1e",
+                      "surface": "#f7f9fb",
+                      "inverse-surface": "#2d3133",
+                      "error": "#ba1a1a",
+                      "surface-tint": "#585e6f",
+                      "on-error-container": "#93000a",
+                      "primary-container": "#151b29",
+                      "surface-variant": "#e0e3e5",
+                      "secondary-container": "#f7dec5",
+                      "on-tertiary": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "secondary": "#6d5b48",
+                      "primary-fixed-dim": "#c1c6d9",
+                      "on-secondary-container": "#73614d",
+                      "surface-bright": "#f7f9fb",
+                      "on-tertiary-fixed-variant": "#38485d",
+                      "background": "#f7f9fb",
+                      "on-tertiary-container": "#75859d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-margin": "20px",
+                      "base": "8px",
+                      "sm": "12px",
+                      "lg": "24px",
+                      "xs": "4px",
+                      "xl": "32px",
+                      "md": "16px",
+                      "gutter": "12px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "price-display": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "title-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "34px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "price-display": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "title-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transform: translateX(-100%);
+            background-image: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0) 0,
+                rgba(255, 255, 255, 0.2) 20%,
+                rgba(255, 255, 255, 0.5) 60%,
+                rgba(255, 255, 255, 0)
+            );
+            animation: shimmer 2s infinite;
+        }
+        @keyframes shimmer {
+            100% {
+                transform: translateX(100%);
+            }
+        }
+        body {
+            /* Ambient background */
+            background-color: theme('colors.background');
+            background-image: radial-gradient(circle at 50% -20%, theme('colors.surface-container-low') 0%, transparent 70%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
+<!-- Decorative background elements for high-end feel -->
+<div class="absolute inset-0 pointer-events-none opacity-20">
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-fixed rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-pulse" style="animation-duration: 8s;"></div>
+<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-fixed rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" style="animation-duration: 12s; animation-delay: 2s;"></div>
+</div>
+<!-- Main Canvas -->
+<main class="w-full max-w-md mx-auto px-container-margin py-xl flex flex-col items-center text-center z-10 relative">
+<!-- Brand / Identity -->
+<div class="mb-lg">
+<span class="font-display-lg text-headline-lg-mobile tracking-tighter text-primary">Aura Commerce</span>
+</div>
+<!-- Illustration Area (Placeholder for actual brand illustration) -->
+<div class="w-full aspect-square max-w-[280px] mb-lg relative">
+<div class="absolute inset-0 bg-surface-container-low rounded-full shadow-[0px_10px_40px_rgba(0,0,0,0.08)] flex items-center justify-center border border-outline-variant/30">
+<!-- Abstract representation of maintenance / building -->
+<div class="relative w-3/4 h-3/4">
+<div class="absolute inset-0 bg-surface-container-highest rounded-xl rotate-6 opacity-50 transition-transform duration-1000 ease-in-out" id="shape1"></div>
+<div class="absolute inset-0 bg-surface-variant rounded-xl -rotate-3 transition-transform duration-1000 ease-in-out delay-100" id="shape2"></div>
+<div class="absolute inset-0 bg-surface rounded-xl flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[64px] text-primary opacity-80" data-weight="fill" style="font-variation-settings: 'FILL' 1;">build</span>
+</div>
+</div>
+</div>
+<!-- Subtle floating particles -->
+<div class="absolute top-4 right-4 w-3 h-3 bg-secondary rounded-full opacity-60 animate-bounce" style="animation-duration: 3s;"></div>
+<div class="absolute bottom-8 left-4 w-4 h-4 bg-primary-container rounded-sm opacity-40 animate-spin" style="animation-duration: 10s;"></div>
+</div>
+<!-- Messaging -->
+<h1 class="font-headline-lg text-headline-lg-mobile text-on-surface mb-xs">We'll be back soon</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl max-w-sm">
+            We are performing scheduled maintenance to elevate your experience.
+        </p>
+<!-- Status Card -->
+<div class="w-full bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-md mb-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] flex flex-col gap-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-xs">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-20"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-outline"></span>
+</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">System Status</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">Under Maintenance</span>
+</div>
+<div class="h-px w-full bg-outline-variant/30"></div>
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">schedule</span> Expected Uptime
+                 </span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">14:00 GMT</span>
+</div>
+</div>
+<!-- Action Area -->
+<div class="w-full flex flex-col gap-md">
+<div class="relative w-full group">
+<div class="absolute inset-y-0 left-0 pl-md flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline group-focus-within:text-primary transition-colors">mail</span>
+</div>
+<input class="w-full bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg py-md pl-xl pr-md border-none focus:ring-0 focus:border-outline focus:shadow-[0_0_0_1.5px_#191c1e,0_0_10px_rgba(0,0,0,0.05)] transition-all placeholder:text-outline/70" placeholder="Enter your email" type="email">
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-md rounded-lg flex items-center justify-center gap-xs hover:bg-on-surface transition-colors active:scale-95 duration-150 haptic-feedback">
+<span>Notify Me</span>
+<span class="material-symbols-outlined text-[18px]">notifications_active</span>
+</button>
+</div>
+</main>
+<!-- Suppressed Shell Components Context: 
+         - TopAppBar: Suppressed (Linear/Dead-end state)
+         - BottomNavBar: Suppressed (Linear/Dead-end state)
+    -->
+<script>
+        // Micro-interactions
+        const btn = document.querySelector('button');
+        btn.addEventListener('click', (e) => {
+            // Simulate haptic thump for primary action
+            if (navigator.vibrate) navigator.vibrate(50);
+            
+            // Loading state visualization
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span>`;
+            btn.classList.add('opacity-80');
+            
+            setTimeout(() => {
+                btn.innerHTML = `<span class="material-symbols-outlined text-[18px]">check</span> <span class="font-label-md">Subscribed</span>`;
+                btn.classList.remove('opacity-80');
+                btn.classList.replace('bg-primary', 'bg-surface-tint'); // subtle success state
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                    btn.classList.replace('bg-surface-tint', 'bg-primary');
+                }, 2000);
+            }, 1000);
+        });
+
+        // Ambient animation for illustration
+        const shape1 = document.getElementById('shape1');
+        const shape2 = document.getElementById('shape2');
+        
+        setInterval(() => {
+            const rot1 = Math.random() * 20 - 10;
+            const rot2 = Math.random() * 20 - 10;
+            shape1.style.transform = `rotate(${rot1}deg) scale(${0.95 + Math.random() * 0.1})`;
+            shape2.style.transform = `rotate(${rot2}deg) scale(${0.95 + Math.random() * 0.1})`;
+        }, 3000);
+    </script>
+</body></html>

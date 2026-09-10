@@ -1,0 +1,277 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Aura - Sort Bottom Sheet</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#0b1c30",
+                        "secondary-fixed-dim": "#dac3aa",
+                        "surface-dim": "#d8dadc",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#151b29",
+                        "on-secondary-container": "#73614d",
+                        "on-tertiary-container": "#75859d",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "inverse-primary": "#c1c6d9",
+                        "on-primary-fixed": "#151b29",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#d3e4fe",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#585e6f",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "secondary": "#6d5b48",
+                        "on-primary-container": "#7e8395",
+                        "on-surface": "#191c1e",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "surface-container": "#eceef0",
+                        "surface-container-highest": "#e0e3e5",
+                        "primary-fixed": "#dde2f6",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-surface-variant": "#45464c",
+                        "primary": "#000000",
+                        "on-secondary-fixed": "#26190a",
+                        "surface": "#f7f9fb",
+                        "surface-bright": "#f7f9fb",
+                        "secondary-fixed": "#f7dec5",
+                        "surface-variant": "#e0e3e5",
+                        "on-primary-fixed-variant": "#414756",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#f7dec5",
+                        "on-secondary-fixed-variant": "#544432",
+                        "surface-container-low": "#f2f4f6",
+                        "outline-variant": "#c6c6cc",
+                        "primary-fixed-dim": "#c1c6d9",
+                        "surface-container-high": "#e6e8ea",
+                        "on-background": "#191c1e",
+                        "tertiary": "#000000",
+                        "outline": "#76777d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "md": "16px",
+                        "container-margin": "20px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "gutter": "12px",
+                        "xl": "32px",
+                        "sm": "12px"
+                    },
+                    "fontFamily": {
+                        "title-lg": ["Inter", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "display-lg": ["Inter", "sans-serif"],
+                        "headline-lg-mobile": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "label-md": ["Inter", "sans-serif"],
+                        "headline-lg": ["Inter", "sans-serif"],
+                        "price-display": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "price-display": ["24px", { "lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom styles for animations and specific UI tweaks */
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .bottom-sheet {
+            transform: translateY(100%);
+            transition: transform 0.3s cubic-bezier(0.0, 0.0, 0.2, 1);
+        }
+        .bottom-sheet.open {
+            transform: translateY(0);
+        }
+        .scrim {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .scrim.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        /* Custom Radio Button Styling */
+        input[type="radio"] {
+            /* Hide standard radio */
+            appearance: none;
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 1.5px solid #c6c6cc; /* outline-variant */
+            outline: none;
+            transition: all 0.2s ease-in-out;
+            position: relative;
+            cursor: pointer;
+            margin: 0;
+            display: grid;
+            place-content: center;
+        }
+        
+        input[type="radio"]::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em #000000; /* primary color */
+            background-color: #000000;
+        }
+        
+        input[type="radio"]:checked {
+            border-color: #000000; /* primary color */
+        }
+        
+        input[type="radio"]:checked::before {
+            transform: scale(1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen overflow-hidden antialiased flex flex-col justify-end">
+<!-- Scrim (Background Overlay) -->
+<div class="scrim fixed inset-0 bg-[#151b29]/40 z-40 open" id="scrim"></div>
+<!-- Bottom Sheet Container -->
+<div class="bottom-sheet fixed bottom-0 left-0 right-0 z-50 bg-surface-container-lowest rounded-t-[24px] shadow-[0px_-10px_40px_rgba(0,0,0,0.08)] flex flex-col max-h-[795px] open" id="bottomSheet">
+<!-- Drag Handle Area -->
+<div class="w-full pt-sm pb-base flex justify-center items-center cursor-grab active:cursor-grabbing" id="dragHandle">
+<div class="w-12 h-1 bg-outline-variant/50 rounded-full"></div>
+</div>
+<!-- Header -->
+<div class="px-container-margin pb-md flex justify-between items-center border-b border-surface-container-high">
+<h2 class="font-title-lg text-title-lg text-on-surface">Sort By</h2>
+<button aria-label="Close" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors text-on-surface-variant active:scale-95">
+<span class="material-symbols-outlined" style="font-size: 24px;">close</span>
+</button>
+</div>
+<!-- Scrollable Content List -->
+<div class="overflow-y-auto px-container-margin py-base flex-1 mb-safe">
+<form id="sortForm">
+<!-- Option: Recommended (Default) -->
+<label class="flex items-center justify-between py-md group cursor-pointer border-b border-surface-container-low/50 last:border-0 active:bg-surface-container-lowest transition-colors haptic-feedback">
+<span class="font-body-lg text-body-lg text-on-surface group-hover:text-primary transition-colors">Recommended</span>
+<input checked="" name="sort_option" type="radio" value="recommended">
+</label>
+<!-- Option: Newest Arrivals -->
+<label class="flex items-center justify-between py-md group cursor-pointer border-b border-surface-container-low/50 last:border-0 active:bg-surface-container-lowest transition-colors haptic-feedback">
+<span class="font-body-lg text-body-lg text-on-surface group-hover:text-primary transition-colors">Newest Arrivals</span>
+<input name="sort_option" type="radio" value="newest">
+</label>
+<!-- Option: Price: Low to High -->
+<label class="flex items-center justify-between py-md group cursor-pointer border-b border-surface-container-low/50 last:border-0 active:bg-surface-container-lowest transition-colors haptic-feedback">
+<span class="font-body-lg text-body-lg text-on-surface group-hover:text-primary transition-colors">Price: Low to High</span>
+<input name="sort_option" type="radio" value="price_asc">
+</label>
+<!-- Option: Price: High to Low -->
+<label class="flex items-center justify-between py-md group cursor-pointer border-b border-surface-container-low/50 last:border-0 active:bg-surface-container-lowest transition-colors haptic-feedback">
+<span class="font-body-lg text-body-lg text-on-surface group-hover:text-primary transition-colors">Price: High to Low</span>
+<input name="sort_option" type="radio" value="price_desc">
+</label>
+<!-- Option: Customer Rating -->
+<label class="flex items-center justify-between py-md group cursor-pointer border-b border-surface-container-low/50 last:border-0 active:bg-surface-container-lowest transition-colors haptic-feedback">
+<span class="font-body-lg text-body-lg text-on-surface group-hover:text-primary transition-colors">Customer Rating</span>
+<input name="sort_option" type="radio" value="rating">
+</label>
+</form>
+</div>
+<!-- Action Area (Optional, included for completeness in a bottom sheet) -->
+<div class="p-container-margin pt-sm bg-surface-container-lowest border-t border-surface-container-high pb-[max(24px,env(safe-area-inset-bottom))]">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-full haptic-feedback active:scale-[0.98] transition-transform flex items-center justify-center gap-2" type="button">
+                Apply Filters
+             </button>
+</div>
+</div>
+<!-- Background content to show context (dummy content) -->
+<div class="fixed inset-0 z-0 bg-background flex flex-col pt-20 px-container-margin blur-sm">
+<div class="h-8 bg-surface-container-high rounded w-1/3 mb-6"></div>
+<div class="grid grid-cols-2 gap-4">
+<div class="aspect-[3/4] bg-surface-container-high rounded-xl"></div>
+<div class="aspect-[3/4] bg-surface-container-high rounded-xl"></div>
+</div>
+</div>
+<script>
+        // Simple Interaction Logic for demonstration
+        const bottomSheet = document.getElementById('bottomSheet');
+        const scrim = document.getElementById('scrim');
+        const closeBtn = document.querySelector('button[aria-label="Close"]');
+        const hapticElements = document.querySelectorAll('.haptic-feedback');
+
+        function closeSheet() {
+            bottomSheet.classList.remove('open');
+            scrim.classList.remove('open');
+            // In a real app, this might navigate back or remove the element from DOM
+            setTimeout(() => {
+                bottomSheet.style.display = 'none';
+                scrim.style.display = 'none';
+            }, 300);
+        }
+
+        closeBtn.addEventListener('click', closeSheet);
+        scrim.addEventListener('click', closeSheet);
+
+        // Haptic feedback simulation
+        hapticElements.forEach(el => {
+            el.addEventListener('click', () => {
+                if(navigator.vibrate) {
+                    navigator.vibrate(10); // Light tick
+                }
+            });
+        });
+        
+        const applyBtn = document.querySelector('.bg-primary');
+        if(applyBtn) {
+            applyBtn.addEventListener('click', () => {
+                if(navigator.vibrate) {
+                    navigator.vibrate(20); // Medium thump
+                }
+                closeSheet();
+            });
+        }
+    </script>
+</body></html>

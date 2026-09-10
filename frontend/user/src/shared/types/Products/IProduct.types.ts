@@ -9,14 +9,8 @@ export interface IProduct extends IBaseEntity {
   Price: number;
   Stock: number;
   Images: IImage[];
-  CategoryID?: string;
-  Category?: ICategory | null;
   Categories?: ICategory[];
-  CollectionID?: string;
-  Collection?: ICollection | null;
   Collections?: ICollection[];
-  SubcategoryID?: string;
-  Subcategory?: ISubcategory | null;
   Subcategories?: ISubcategory[];
   CategoryIDs?: string[];
   SubCategoryIDs?: string[];

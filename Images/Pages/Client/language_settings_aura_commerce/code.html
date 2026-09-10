@@ -1,0 +1,185 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Language Settings - Aura Commerce</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e0e3e5",
+                        "background": "#f7f9fb",
+                        "primary-container": "#151b29",
+                        "inverse-surface": "#2d3133",
+                        "tertiary-container": "#0b1c30",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-primary-fixed-variant": "#414756",
+                        "surface-bright": "#f7f9fb",
+                        "on-surface-variant": "#45464c",
+                        "outline-variant": "#c6c6cc",
+                        "secondary": "#6d5b48",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#dac3aa",
+                        "on-secondary-fixed-variant": "#544432",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-dim": "#d8dadc",
+                        "tertiary": "#000000",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eceef0",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#f7dec5",
+                        "on-secondary-container": "#73614d",
+                        "surface": "#f7f9fb",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "on-secondary-fixed": "#26190a",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#c1c6d9",
+                        "surface-tint": "#585e6f",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#76777d",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#d3e4fe",
+                        "on-background": "#191c1e",
+                        "primary": "#000000",
+                        "secondary-container": "#f7dec5",
+                        "on-surface": "#191c1e",
+                        "on-tertiary-container": "#75859d",
+                        "inverse-primary": "#c1c6d9",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#151b29",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#dde2f6",
+                        "on-primary-container": "#7e8395",
+                        "surface-container-low": "#f2f4f6",
+                        "inverse-on-surface": "#eff1f3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "md": "16px",
+                        "gutter": "12px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "container-margin": "20px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "price-display": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "price-display": ["24px", { "lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: #000000;
+            box-shadow: 0 0 0 4px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col pt-16">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 backdrop-blur-xl bg-surface/90 flex items-center justify-between px-container-margin h-16 w-full">
+<button class="w-10 h-10 flex items-center justify-center text-primary active:scale-95 transition-transform duration-300 hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<h1 class="font-title-lg text-title-lg text-primary font-bold">Language</h1>
+<div class="w-10 h-10"></div> <!-- Placeholder for balance -->
+</header>
+<main class="flex-grow px-container-margin py-lg max-w-2xl mx-auto w-full">
+<!-- Search Bar -->
+<div class="relative mb-xl">
+<div class="absolute inset-y-0 left-0 pl-sm flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="search-input w-full bg-[#F1F5F9] border-none rounded-lg py-sm pl-10 pr-10 font-body-lg text-body-lg text-on-surface placeholder-outline-variant transition-all duration-200" placeholder="Search languages..." type="text">
+<button class="absolute inset-y-0 right-0 pr-sm flex items-center text-outline hover:text-on-surface">
+<span class="material-symbols-outlined text-[20px]">cancel</span>
+</button>
+</div>
+<!-- Selected Language Section -->
+<section class="mb-xl">
+<h2 class="font-label-md text-label-md text-outline uppercase tracking-wider mb-sm px-xs">Current Selection</h2>
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-[0_4px_20px_rgba(0,0,0,0.04)] overflow-hidden">
+<button class="w-full flex items-center justify-between p-md hover:bg-surface-container-low transition-colors duration-200 active:scale-[0.98]">
+<div class="flex flex-col items-start">
+<span class="font-body-lg text-body-lg text-on-surface">English (US)</span>
+<span class="font-body-md text-body-md text-on-surface-variant">System Default</span>
+</div>
+<span class="material-symbols-outlined text-primary icon-fill text-[24px]">check_circle</span>
+</button>
+</div>
+</section>
+<!-- All Languages List -->
+<section>
+<h2 class="font-label-md text-label-md text-outline uppercase tracking-wider mb-sm px-xs">All Languages</h2>
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-[0_4px_20px_rgba(0,0,0,0.04)] overflow-hidden">
+<button class="w-full flex items-center justify-between p-md border-b border-surface-container hover:bg-surface-container-low transition-colors duration-200 active:scale-[0.98]">
+<span class="font-body-lg text-body-lg text-on-surface">Arabic (العربية)</span>
+<span class="material-symbols-outlined text-outline-variant opacity-0">check</span>
+</button>
+<button class="w-full flex items-center justify-between p-md border-b border-surface-container hover:bg-surface-container-low transition-colors duration-200 active:scale-[0.98]">
+<span class="font-body-lg text-body-lg text-on-surface">French (Français)</span>
+<span class="material-symbols-outlined text-outline-variant opacity-0">check</span>
+</button>
+<button class="w-full flex items-center justify-between p-md border-b border-surface-container hover:bg-surface-container-low transition-colors duration-200 active:scale-[0.98]">
+<span class="font-body-lg text-body-lg text-on-surface">Spanish (Español)</span>
+<span class="material-symbols-outlined text-outline-variant opacity-0">check</span>
+</button>
+<button class="w-full flex items-center justify-between p-md border-b border-surface-container hover:bg-surface-container-low transition-colors duration-200 active:scale-[0.98]">
+<span class="font-body-lg text-body-lg text-on-surface">German (Deutsch)</span>
+<span class="material-symbols-outlined text-outline-variant opacity-0">check</span>
+</button>
+<button class="w-full flex items-center justify-between p-md border-b border-surface-container hover:bg-surface-container-low transition-colors duration-200 active:scale-[0.98]">
+<span class="font-body-lg text-body-lg text-on-surface">Japanese (日本語)</span>
+<span class="material-symbols-outlined text-outline-variant opacity-0">check</span>
+</button>
+<button class="w-full flex items-center justify-between p-md hover:bg-surface-container-low transition-colors duration-200 active:scale-[0.98]">
+<span class="font-body-lg text-body-lg text-on-surface">Chinese (中文)</span>
+<span class="material-symbols-outlined text-outline-variant opacity-0">check</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Navigation Suppressed for Settings Screen as per rules -->
+</body></html>

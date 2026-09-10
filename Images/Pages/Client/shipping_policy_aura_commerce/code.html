@@ -1,0 +1,285 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Shipping Policy | Aura Commerce</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "primary": "#000000",
+                    "on-background": "#191c1e",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "surface": "#f7f9fb",
+                    "primary-container": "#151b29",
+                    "background": "#f7f9fb",
+                    "surface-container-high": "#e6e8ea",
+                    "on-tertiary-container": "#75859d",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#0b1c30",
+                    "surface-tint": "#585e6f",
+                    "secondary-fixed": "#f7dec5",
+                    "tertiary": "#000000",
+                    "outline": "#76777d",
+                    "surface-variant": "#e0e3e5",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "on-secondary-fixed-variant": "#544432",
+                    "surface-container-low": "#f2f4f6",
+                    "secondary-container": "#f7dec5",
+                    "secondary-fixed-dim": "#dac3aa",
+                    "on-secondary-fixed": "#26190a",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#dde2f6",
+                    "on-primary-fixed-variant": "#414756",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#191c1e",
+                    "tertiary-fixed": "#d3e4fe",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#6d5b48",
+                    "on-surface-variant": "#45464c",
+                    "surface-dim": "#d8dadc",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#151b29",
+                    "inverse-surface": "#2d3133",
+                    "inverse-on-surface": "#eff1f3",
+                    "inverse-primary": "#c1c6d9",
+                    "on-primary-container": "#7e8395",
+                    "outline-variant": "#c6c6cc",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#c1c6d9",
+                    "on-tertiary-fixed": "#0b1c30",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-container": "#eceef0",
+                    "surface-bright": "#f7f9fb",
+                    "on-secondary-container": "#73614d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "lg": "24px",
+                    "xl": "32px",
+                    "container-margin": "20px",
+                    "base": "8px",
+                    "md": "16px",
+                    "gutter": "12px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "title-lg": ["Inter"],
+                    "price-display": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "price-display": ["24px", {"lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f7f9fb; }
+        ::-webkit-scrollbar-thumb { background: #e0e3e5; border-radius: 10px; }
+        .glass-header { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .fade-up { animation: fadeUp 0.6s ease-out forwards; opacity: 0; }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 backdrop-blur-md bg-surface/90 flex items-center justify-between px-container-margin h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform duration-200 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-primary" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-title-lg text-title-lg font-bold tracking-tight text-primary">Aura Commerce</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="shopping_bag">shopping_bag</span>
+</div>
+</header>
+<main class="pt-24 pb-32 px-container-margin max-w-3xl mx-auto">
+<!-- Hero Section -->
+<section class="fade-up mb-xl">
+<div class="mb-sm text-label-md font-label-md text-on-tertiary-container uppercase tracking-widest">Support Center</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg mb-md text-primary">Shipping Policy</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                At Aura, we ensure your premium selection reaches you with speed and care. Explore our comprehensive delivery framework designed for a seamless global experience.
+            </p>
+</section>
+<!-- Bento Layout: At a Glance -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-xl fade-up" style="animation-delay: 0.1s">
+<div class="bg-surface-container-low p-lg rounded-xl flex flex-col justify-between border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary mb-md" data-icon="local_shipping">local_shipping</span>
+<div>
+<h3 class="font-title-lg text-title-lg mb-xs">Fast Fulfilment</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Orders processed within 24 hours on business days.</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-lg rounded-xl flex flex-col justify-between border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary mb-md" data-icon="public">public</span>
+<div>
+<h3 class="font-title-lg text-title-lg mb-xs">Global Reach</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Express shipping to over 150 countries worldwide.</p>
+</div>
+</div>
+</div>
+<!-- Policy Content -->
+<div class="space-y-xl fade-up" style="animation-delay: 0.2s">
+<!-- Delivery Methods -->
+<section>
+<h3 class="font-title-lg text-title-lg mb-md border-b border-outline-variant/30 pb-sm">1. Delivery Methods</h3>
+<div class="space-y-md">
+<div class="flex items-start gap-md">
+<div class="w-1.5 h-1.5 mt-2 rounded-full bg-primary shrink-0"></div>
+<div>
+<span class="font-semibold text-primary block">Standard Delivery</span>
+<p class="text-on-surface-variant">Reliable logistics via our regional partners. Carbon-neutral shipping available at checkout.</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<div class="w-1.5 h-1.5 mt-2 rounded-full bg-primary shrink-0"></div>
+<div>
+<span class="font-semibold text-primary block">Express Priority</span>
+<p class="text-on-surface-variant">Air-courier handling for those who prioritize time. Premium packaging included.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Timelines Table -->
+<section>
+<h3 class="font-title-lg text-title-lg mb-md border-b border-outline-variant/30 pb-sm">2. Estimated Timelines</h3>
+<div class="overflow-hidden rounded-xl border border-outline-variant/30">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-high">
+<tr>
+<th class="p-md font-label-md text-label-md text-on-surface">REGION</th>
+<th class="p-md font-label-md text-label-md text-on-surface">STANDARD</th>
+<th class="p-md font-label-md text-label-md text-on-surface">EXPRESS</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/30">
+<tr>
+<td class="p-md font-body-md">Domestic</td>
+<td class="p-md font-body-md text-on-surface-variant">3-5 Days</td>
+<td class="p-md font-body-md text-on-surface-variant">1-2 Days</td>
+</tr>
+<tr>
+<td class="p-md font-body-md">International</td>
+<td class="p-md font-body-md text-on-surface-variant">7-14 Days</td>
+<td class="p-md font-body-md text-on-surface-variant">3-5 Days</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="mt-md text-label-md text-on-tertiary-container italic">* Timelines are estimates and exclude customs processing for international orders.</p>
+</section>
+<!-- International Shipping & Tracking -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div>
+<h3 class="font-title-lg text-title-lg mb-md">Customs &amp; Duties</h3>
+<p class="text-on-surface-variant leading-relaxed">International orders may be subject to import taxes and duties. Aura offers DDP (Delivered Duty Paid) options at checkout for select regions to avoid unexpected costs at delivery.</p>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg mb-md">Order Tracking</h3>
+<p class="text-on-surface-variant leading-relaxed">Once your order departs our fulfillment center, a unique Aura Tracking ID will be sent via email. Real-time updates are available in your profile under 'Orders'.</p>
+</div>
+</section>
+<!-- Map Placeholder for Fulfillment Centers -->
+<div class="w-full h-48 rounded-xl overflow-hidden relative border border-outline-variant/30">
+<div class="w-full h-full bg-cover bg-center grayscale opacity-60" data-alt="A clean, minimalist map rendering showing the global network of Aura Commerce fulfillment centers. The map features a light mode aesthetic with soft grey continents and subtle black pulse points indicating distribution hubs. The lighting is bright and architectural, maintaining a premium e-commerce tech feel." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCAVGtu7QJ3hOsQoda1bivTN8BVfQzsjG53e_1iEspkG6h9ztJYhUboWJpmuQptIE7AOa-zf0kF4Hi5EirrQE538SMkfbG2sGZk7rxyzozYB94uq-xQoIGQZ-2x4z7DFwKkQj3WJ8irkO_SN-Frv8x9hjRzFqgB_KAzorDrdXWRwMNEZDYnU_AjEh62WKRUqXFyKgHbQ9tQ2LlqJAWN6yDcTXoAiaz9oDPPrHoTAhDZksvnTbAGs09tNw')"></div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="bg-surface/90 px-md py-sm rounded-lg shadow-sm border border-outline-variant/30 backdrop-blur-md">
+<span class="font-label-md text-label-md text-primary">Global Distribution Network</span>
+</div>
+</div>
+</div>
+<!-- FAQ CTA -->
+<section class="bg-primary p-lg rounded-xl text-on-primary text-center">
+<h4 class="font-title-lg text-title-lg mb-sm">Need more help?</h4>
+<p class="font-body-md mb-md opacity-80">Our support team is available 24/7 for shipping inquiries.</p>
+<button class="bg-white text-primary px-lg py-sm rounded-full font-label-md text-label-md font-bold hover:bg-opacity-90 transition-all active:scale-95">
+                    CONTACT SUPPORT
+                </button>
+</section>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 backdrop-blur-md border-t border-outline-variant/30 bg-surface/90 flex justify-around items-center pt-2 pb-safe px-container-margin w-full">
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant/60 hover:bg-surface-container-low transition-colors active:scale-90 haptic-feedback transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant/60 hover:bg-surface-container-low transition-colors active:scale-90 haptic-feedback transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-md text-label-md">Search</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant/60 hover:bg-surface-container-low transition-colors active:scale-90 haptic-feedback transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-label-md text-label-md">Cart</span>
+</div>
+<div class="flex flex-col items-center justify-center text-primary font-semibold hover:bg-surface-container-low transition-colors active:scale-90 haptic-feedback transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="receipt_long" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span class="font-label-md text-label-md">Orders</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant/60 hover:bg-surface-container-low transition-colors active:scale-90 haptic-feedback transition-transform duration-200 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</div>
+</nav>
+<script>
+        // Micro-interaction for table rows
+        document.querySelectorAll('tr').forEach(row => {
+            row.addEventListener('click', () => {
+                row.classList.add('bg-surface-container-low');
+                setTimeout(() => row.classList.remove('bg-surface-container-low'), 300);
+            });
+        });
+
+        // Scroll observer for header glass effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-sm');
+            } else {
+                header.classList.remove('shadow-sm');
+            }
+        });
+    </script>
+</body></html>

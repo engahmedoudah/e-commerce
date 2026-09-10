@@ -1,5 +1,2 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
-@import "./styles/design-tokens.css";
-@import "./styles/storefront.css";
-@import "./styles/global.css";

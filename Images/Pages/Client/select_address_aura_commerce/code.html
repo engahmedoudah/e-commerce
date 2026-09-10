@@ -1,0 +1,217 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Select Address</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e0e3e5",
+                        "background": "#f7f9fb",
+                        "primary-container": "#151b29",
+                        "inverse-surface": "#2d3133",
+                        "tertiary-container": "#0b1c30",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-primary-fixed-variant": "#414756",
+                        "surface-bright": "#f7f9fb",
+                        "on-surface-variant": "#45464c",
+                        "outline-variant": "#c6c6cc",
+                        "secondary": "#6d5b48",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#dac3aa",
+                        "on-secondary-fixed-variant": "#544432",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-dim": "#d8dadc",
+                        "tertiary": "#000000",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eceef0",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#f7dec5",
+                        "on-secondary-container": "#73614d",
+                        "surface": "#f7f9fb",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "on-secondary-fixed": "#26190a",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#c1c6d9",
+                        "surface-tint": "#585e6f",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#76777d",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#d3e4fe",
+                        "on-background": "#191c1e",
+                        "primary": "#000000",
+                        "secondary-container": "#f7dec5",
+                        "on-surface": "#191c1e",
+                        "on-tertiary-container": "#75859d",
+                        "inverse-primary": "#c1c6d9",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#151b29",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#dde2f6",
+                        "on-primary-container": "#7e8395",
+                        "surface-container-low": "#f2f4f6",
+                        "inverse-on-surface": "#eff1f3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "md": "16px",
+                        "gutter": "12px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "container-margin": "20px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "price-display": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "price-display": ["24px", { "lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .scrim-active {
+            pointer-events: auto;
+            opacity: 1;
+        }
+        .bottom-sheet-active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen antialiased flex flex-col md:max-w-md md:mx-auto md:shadow-2xl md:relative md:overflow-hidden">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full md:w-[28rem] z-50 backdrop-blur-xl bg-surface/90 dark:bg-surface-container-lowest/90 flex flex-col items-center justify-between px-container-margin h-16 w-full">
+<div class="flex items-center justify-between w-full h-full">
+<button aria-label="Go back" class="text-on-surface-variant dark:text-outline hover:opacity-70 transition-opacity active:scale-95 transition-transform duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile tracking-tighter text-primary dark:text-on-surface">Select Address</h1>
+<div class="w-6 h-6"></div> <!-- Spacer for centering -->
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[88px] pb-[120px] px-container-margin overflow-y-auto" role="main">
+<!-- Saved Addresses Container -->
+<div class="flex flex-col gap-sm">
+<!-- Address Option 1 (Selected) -->
+<label class="relative flex items-start gap-md p-lg rounded-xl border-[1.5px] border-primary bg-surface-container-lowest cursor-pointer transition-colors active:scale-[0.98] duration-200" for="address-1">
+<div class="flex h-full items-start pt-xs">
+<input checked="" class="peer sr-only" id="address-1" name="shipping-address" type="radio" value="home">
+<div class="w-5 h-5 rounded-full border-2 border-primary flex items-center justify-center after:content-[''] after:w-2.5 after:h-2.5 after:bg-primary after:rounded-full after:scale-100 transition-all"></div>
+</div>
+<div class="flex flex-col flex-grow">
+<div class="flex justify-between items-center mb-xs">
+<span class="font-title-lg text-title-lg text-on-surface">Home</span>
+<span class="font-label-md text-label-md text-on-surface bg-surface-container px-2 py-1 rounded-sm uppercase tracking-wider">Default</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        1234 Minimalism Way, Apt 8B<br>
+                        San Francisco, CA 94105<br>
+                        United States
+                    </p>
+</div>
+</label>
+<!-- Address Option 2 -->
+<label class="relative flex items-start gap-md p-lg rounded-xl border border-outline-variant bg-surface-container-lowest cursor-pointer transition-colors active:scale-[0.98] duration-200" for="address-2">
+<div class="flex h-full items-start pt-xs">
+<input class="peer sr-only" id="address-2" name="shipping-address" type="radio" value="work">
+<div class="w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center peer-checked:border-primary peer-checked:after:bg-primary after:content-[''] after:w-2.5 after:h-2.5 after:bg-transparent after:rounded-full after:transition-all"></div>
+</div>
+<div class="flex flex-col flex-grow">
+<div class="flex justify-between items-center mb-xs">
+<span class="font-title-lg text-title-lg text-on-surface">Studio</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        987 High-End Blvd, Floor 4<br>
+                        San Francisco, CA 94103<br>
+                        United States
+                    </p>
+</div>
+</label>
+</div>
+<!-- Add New Address Action -->
+<button aria-label="Add new address" class="mt-lg w-full flex items-center justify-center gap-xs py-md border border-outline border-dashed rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">add</span>
+<span class="font-title-lg text-title-lg text-sm">Add New Address</span>
+</button>
+</main>
+<!-- Sticky Bottom Action Bar -->
+<div class="fixed bottom-0 w-full md:w-[28rem] z-40 bg-surface/90 backdrop-blur-xl border-t border-outline-variant/30 p-container-margin pb-safe flex flex-col gap-md">
+<button class="w-full bg-primary text-on-primary font-title-lg text-title-lg py-md rounded-lg flex justify-center items-center active:scale-95 transition-transform duration-300">
+            Confirm Selection
+        </button>
+</div>
+<!-- Script for simple interactions -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const radioButtons = document.querySelectorAll('input[name="shipping-address"]');
+            const labels = document.querySelectorAll('label[for^="address-"]');
+
+            radioButtons.forEach(radio => {
+                radio.addEventListener('change', (e) => {
+                    // Reset all borders
+                    labels.forEach(label => {
+                        label.classList.remove('border-[1.5px]', 'border-primary');
+                        label.classList.add('border', 'border-outline-variant');
+                        
+                        const dotContainer = label.querySelector('.w-5.h-5');
+                        if(dotContainer) {
+                            dotContainer.classList.remove('border-primary');
+                            dotContainer.classList.add('border-outline-variant');
+                            dotContainer.classList.remove('after:bg-primary', 'after:scale-100');
+                            dotContainer.classList.add('after:bg-transparent', 'after:scale-0');
+                        }
+                    });
+
+                    // Highlight selected
+                    const selectedLabel = document.querySelector(`label[for="${e.target.id}"]`);
+                    if(selectedLabel) {
+                        selectedLabel.classList.remove('border', 'border-outline-variant');
+                        selectedLabel.classList.add('border-[1.5px]', 'border-primary');
+                        
+                        const dotContainer = selectedLabel.querySelector('.w-5.h-5');
+                        if(dotContainer) {
+                            dotContainer.classList.remove('border-outline-variant', 'after:bg-transparent', 'after:scale-0');
+                            dotContainer.classList.add('border-primary', 'after:bg-primary', 'after:scale-100');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body></html>

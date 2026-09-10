@@ -1,0 +1,207 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#f2f4f6",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "outline-variant": "#c6c6cc",
+                    "on-tertiary-fixed": "#0b1c30",
+                    "surface-bright": "#f7f9fb",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "on-primary-fixed-variant": "#414756",
+                    "inverse-surface": "#2d3133",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#6d5b48",
+                    "inverse-primary": "#c1c6d9",
+                    "surface-dim": "#d8dadc",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#d3e4fe",
+                    "primary": "#000000",
+                    "on-surface": "#191c1e",
+                    "on-secondary-fixed": "#26190a",
+                    "on-secondary-fixed-variant": "#544432",
+                    "secondary-fixed": "#f7dec5",
+                    "background": "#f7f9fb",
+                    "on-background": "#191c1e",
+                    "tertiary": "#000000",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#eceef0",
+                    "primary-container": "#151b29",
+                    "on-tertiary-container": "#75859d",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-primary-container": "#7e8395",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#e6e8ea",
+                    "secondary-fixed-dim": "#dac3aa",
+                    "error": "#ba1a1a",
+                    "surface-tint": "#585e6f",
+                    "surface": "#f7f9fb",
+                    "on-surface-variant": "#45464c",
+                    "on-secondary-container": "#73614d",
+                    "tertiary-container": "#0b1c30",
+                    "surface-variant": "#e0e3e5",
+                    "secondary-container": "#f7dec5",
+                    "primary-fixed": "#dde2f6",
+                    "on-primary-fixed": "#151b29",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#c1c6d9",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#76777d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "sm": "12px",
+                    "base": "8px",
+                    "container-margin": "20px",
+                    "lg": "24px",
+                    "xl": "32px",
+                    "md": "16px",
+                    "gutter": "12px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "title-lg": ["Inter"],
+                    "price-display": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "price-display": ["24px", {"lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
+        .haptic-tap:active { transform: scale(0.95); transition: transform 0.1s ease; }
+        .haptic-tick:active { transform: scale(0.9); transition: transform 0.1s ease; }
+        .glass-panel { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md flex justify-between items-center px-container-margin h-16 w-full">
+<div class="flex items-center gap-md">
+<button class="haptic-tap active:scale-95 transition-transform text-primary">
+<span class="material-symbols-outlined font-title-lg text-title-lg">arrow_back</span>
+</button>
+<h1 class="font-title-lg text-title-lg text-primary">Smartphones</h1>
+</div>
+<button class="haptic-tap active:scale-95 transition-transform text-primary">
+<span class="material-symbols-outlined font-title-lg text-title-lg">shopping_bag</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 pb-32 px-container-margin flex flex-col items-center justify-center text-center">
+<!-- Illustration Container -->
+<div class="relative w-full max-w-[280px] aspect-square mb-xl flex items-center justify-center">
+<!-- Animated Background Glow -->
+<div class="absolute inset-0 bg-secondary-fixed opacity-20 blur-3xl rounded-full animate-pulse"></div>
+<!-- Professional Illustration -->
+<div class="relative z-10 w-full h-full flex items-center justify-center">
+<div class="w-full h-full rounded-xl overflow-hidden bg-surface-container-high border border-outline-variant/30 flex items-center justify-center group">
+<img class="w-48 h-48 object-contain transition-transform duration-500 group-hover:scale-110" data-alt="A minimalist, high-end 3D digital illustration of a clean smartphone screen displaying a magnifying glass and a faint ghost icon. The scene is bathed in soft, neutral light-mode tones of silver and charcoal with a subtle gold accent. The style is architectural and clean, featuring soft shadows and an expensive editorial feel, reflecting the premium smartphone brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9E1GeBqfXCho6NqDnISaZqJexjdJlymPXwexCpPb6SBd1lYvl7J9sbMJDG9CnMftmc0bWHPmdy7Su-HetL67zq_K-QIHm78erverTpXcvPQiOkE17VBoTWXUOMAkG7iZilhV7NDxVjTKP7gIfXUiZuf4qnwDfrO93DJyqvQfNraFzrqEaa4Yzzck-Ogirzcevvg1bdQ8MmVjhGcrcSrekVX13LtkwY1AWuQfdsENyHJGDxWS5LUv5Dg">
+</div>
+</div>
+</div>
+<!-- Error Messaging -->
+<div class="max-w-xs mx-auto mb-xl space-y-sm">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">No Products Found</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">We couldn't find any smartphones matching this subcategory. Try refining your filters or browse our other collections.</p>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-md w-full max-w-[280px]">
+<button class="w-full py-md bg-primary text-on-primary rounded-lg font-body-lg text-body-lg haptic-tap font-bold shadow-sm transition-all hover:opacity-90">
+                View All Categories
+            </button>
+<button class="w-full py-md border border-outline text-primary rounded-lg font-body-lg text-body-lg haptic-tap transition-all hover:bg-surface-container-low">
+                Back to Home
+            </button>
+</div>
+<!-- Suggestion Chips (Bento Style Layout) -->
+<div class="mt-xl w-full text-left">
+<p class="font-label-md text-label-md text-outline uppercase mb-md tracking-wider">Suggested for you</p>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="p-md bg-surface-container-low rounded-xl border border-outline-variant/20 haptic-tick cursor-pointer hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary mb-xs">devices</span>
+<p class="font-label-md text-label-md text-on-surface font-bold">New Arrivals</p>
+</div>
+<div class="p-md bg-surface-container-low rounded-xl border border-outline-variant/20 haptic-tick cursor-pointer hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary mb-xs">sell</span>
+<p class="font-label-md text-label-md text-on-surface font-bold">Best Sellers</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface/90 backdrop-blur-md rounded-t-xl shadow-sm border-t border-outline-variant/20 flex justify-around items-center h-20 px-container-margin pb-safe">
+<!-- Shop (Active) -->
+<div class="flex flex-col items-center justify-center text-primary font-bold haptic-tick active:scale-90 transition-all duration-200 cursor-pointer">
+<span class="material-symbols-outlined font-label-md text-label-md">storefront</span>
+<span class="font-label-md text-label-md">Shop</span>
+</div>
+<!-- Explore -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant haptic-tick active:scale-90 transition-all duration-200 cursor-pointer opacity-60">
+<span class="material-symbols-outlined font-label-md text-label-md">explore</span>
+<span class="font-label-md text-label-md">Explore</span>
+</div>
+<!-- Cart -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant haptic-tick active:scale-90 transition-all duration-200 cursor-pointer opacity-60">
+<span class="material-symbols-outlined font-label-md text-label-md">shopping_cart</span>
+<span class="font-label-md text-label-md">Cart</span>
+</div>
+<!-- Wishlist -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant haptic-tick active:scale-90 transition-all duration-200 cursor-pointer opacity-60">
+<span class="material-symbols-outlined font-label-md text-label-md">favorite</span>
+<span class="font-label-md text-label-md">Wishlist</span>
+</div>
+<!-- Profile -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant haptic-tick active:scale-90 transition-all duration-200 cursor-pointer opacity-60">
+<span class="material-symbols-outlined font-label-md text-label-md">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</div>
+</nav>
+<script>
+        // Simple haptic feedback simulation for buttons
+        document.querySelectorAll('.haptic-tap, .haptic-tick').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                if (window.navigator.vibrate) {
+                    window.navigator.vibrate(5);
+                }
+            });
+        });
+    </script>
+</body></html>

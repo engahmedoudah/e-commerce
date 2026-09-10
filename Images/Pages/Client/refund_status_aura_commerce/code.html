@@ -1,0 +1,231 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Refund Status - Aura Commerce</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e0e3e5",
+                        "background": "#f7f9fb",
+                        "primary-container": "#151b29",
+                        "inverse-surface": "#2d3133",
+                        "tertiary-container": "#0b1c30",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-primary-fixed-variant": "#414756",
+                        "surface-bright": "#f7f9fb",
+                        "on-surface-variant": "#45464c",
+                        "outline-variant": "#c6c6cc",
+                        "secondary": "#6d5b48",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#dac3aa",
+                        "on-secondary-fixed-variant": "#544432",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-dim": "#d8dadc",
+                        "tertiary": "#000000",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eceef0",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#f7dec5",
+                        "on-secondary-container": "#73614d",
+                        "surface": "#f7f9fb",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "on-secondary-fixed": "#26190a",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#c1c6d9",
+                        "surface-tint": "#585e6f",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#76777d",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#d3e4fe",
+                        "on-background": "#191c1e",
+                        "primary": "#000000",
+                        "secondary-container": "#f7dec5",
+                        "on-surface": "#191c1e",
+                        "on-tertiary-container": "#75859d",
+                        "inverse-primary": "#c1c6d9",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#151b29",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#dde2f6",
+                        "on-primary-container": "#7e8395",
+                        "surface-container-low": "#f2f4f6",
+                        "inverse-on-surface": "#eff1f3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "md": "16px",
+                        "gutter": "12px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "container-margin": "20px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "price-display": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "price-display": ["24px", { "lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen antialiased selection:bg-primary-container selection:text-on-primary-container pb-24">
+<!-- TopAppBar (Transactional - Hidden Bottom Nav) -->
+<header class="fixed top-0 w-full z-50 backdrop-blur-xl bg-surface/90 dark:bg-surface-container-lowest/90">
+<div class="flex items-center justify-between px-container-margin h-16 w-full">
+<button aria-label="Go back" class="p-2 -ml-2 rounded-full hover:bg-surface-container-low transition-colors text-primary dark:text-on-surface active:scale-95 transition-transform duration-300">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg tracking-tighter text-primary dark:text-on-surface absolute left-1/2 -translate-x-1/2">
+                Aura Commerce
+            </h1>
+<button aria-label="Support" class="p-2 -mr-2 rounded-full hover:bg-surface-container-low transition-colors text-primary dark:text-on-surface active:scale-95 transition-transform duration-300">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+</div>
+</header>
+<main class="pt-24 px-container-margin max-w-2xl mx-auto space-y-lg">
+<!-- Header Section -->
+<section class="text-center space-y-sm py-md">
+<h2 class="font-title-lg text-title-lg text-primary">Refund Status</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Order #AUR-8924-M</p>
+</section>
+<!-- Amount Summary Card -->
+<section class="bg-surface-container-lowest rounded-xl p-lg border border-outline-variant/30 shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
+<div class="flex flex-col items-center justify-center space-y-sm mb-lg border-b border-outline-variant/20 pb-lg">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Estimated Refund</span>
+<span class="font-price-display text-price-display text-primary">$142.50</span>
+</div>
+<div class="space-y-sm">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Destination</span>
+<span class="font-body-md text-body-md text-primary font-medium flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="credit_card">credit_card</span>
+                        Visa ending in 4242
+                    </span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Expected Date</span>
+<span class="font-body-md text-body-md text-primary font-medium">Oct 12 - 15, 2023</span>
+</div>
+</div>
+</section>
+<!-- Detailed Progress Tracker (Stepper) -->
+<section class="bg-surface-container-lowest rounded-xl p-lg border border-outline-variant/30 shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
+<h3 class="font-title-lg text-title-lg text-primary mb-xl">Tracking Details</h3>
+<div class="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-primary before:via-primary before:to-outline-variant/30">
+<!-- Step 1: Initiated (Completed) -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-primary bg-primary text-on-primary shadow shadow-primary/20 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+<span class="material-symbols-outlined text-[20px]" data-icon="check">check</span>
+</div>
+<div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-outline-variant/30 bg-surface-container-low/50">
+<div class="flex items-center justify-between mb-1">
+<h4 class="font-title-lg text-[16px] text-primary">Refund Initiated</h4>
+<span class="font-label-md text-label-md text-on-surface-variant">Oct 08</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Your return request was approved.</p>
+</div>
+</div>
+<!-- Step 2: Received (Completed) -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-primary bg-primary text-on-primary shadow shadow-primary/20 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+<span class="material-symbols-outlined text-[20px]" data-icon="check">check</span>
+</div>
+<div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-outline-variant/30 bg-surface-container-low/50">
+<div class="flex items-center justify-between mb-1">
+<h4 class="font-title-lg text-[16px] text-primary">Item Received</h4>
+<span class="font-label-md text-label-md text-on-surface-variant">Oct 10</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Package arrived at our facility.</p>
+</div>
+</div>
+<!-- Step 3: Inspected (Current) -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-primary bg-surface-container-lowest text-primary shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+</div>
+<div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border-2 border-primary bg-surface">
+<div class="flex items-center justify-between mb-1">
+<h4 class="font-title-lg text-[16px] text-primary">Inspecting Item</h4>
+<span class="font-label-md text-label-md text-primary animate-pulse">In Progress</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">We are currently inspecting your returned item.</p>
+</div>
+</div>
+<!-- Step 4: Refund Sent (Pending) -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-outline-variant bg-surface-container-lowest text-outline shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+<div class="w-3 h-3 rounded-full bg-outline-variant/50"></div>
+</div>
+<div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border border-outline-variant/30 bg-surface-container-lowest opacity-60">
+<div class="flex items-center justify-between mb-1">
+<h4 class="font-title-lg text-[16px] text-outline">Refund Sent</h4>
+<span class="font-label-md text-label-md text-outline-variant">Pending</span>
+</div>
+<p class="font-body-md text-body-md text-outline">Funds will be transferred to your original payment method.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Summary -->
+<section class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/30 flex gap-4 items-center">
+<img class="w-20 h-20 object-cover rounded-lg bg-surface-variant" data-alt="A minimalist photograph of a high-end black ceramic pour-over coffee dripper on a pristine white marble counter. Clean light mode aesthetic, soft studio lighting, sharp focus on the matte texture of the ceramic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ_33geZu-fV1FhPFDBE6bFn4wZ6PM4j7yIz6rROiskxktDM9lXHxirTvK5UmbU_HQwr8rYsQkR9YNKUR4_tkBB-GiZJB_AY3wYOuUlQYAYskAaFmbpEycxtwgYGvKe58lkoYhhh6V7px74DBozauUHNd3rrZJOyUL7GezpEraMnBJmsoO1pZrOysIU_XPmFiVtz23P6W-AxlTCKXELEMHakyC0kjKmWdnUWypYQa305r_OShlGryvcg">
+<div class="flex-1">
+<h4 class="font-title-lg text-[16px] text-primary line-clamp-1">Obsidian Ceramic Dripper</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Qty: 1 • Reason: Changed mind</p>
+</div>
+<div class="font-price-display text-[16px] text-primary">
+                $142.50
+            </div>
+</section>
+</main>
+</body></html>
