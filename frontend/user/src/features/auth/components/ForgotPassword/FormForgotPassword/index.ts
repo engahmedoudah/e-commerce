@@ -1,1 +1,0 @@
-export { default as FormForgotPassword } from "./FormForgotPassword.tsx";
