@@ -2,6 +2,9 @@
 
 A full-stack e-commerce administration dashboard built with React, TypeScript, Node.js, Express, and MongoDB.
 
+## Project Demo
+[Screencast_20260912_114147.webm](https://github.com/user-attachments/assets/32edb022-7890-45f9-b300-fb441cdba71a)
+
 ## Features
 
 - JWT Authentication
